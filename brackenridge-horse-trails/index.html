@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brackenridge Horse Trails (Demo Concept)</title>
+<meta name="description" content="Brackenridge Horse Trails is an illustrative demo concept — family-run horse trails, riding lessons, holiday camps and farm camping. Fictional business, demo only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --saddle:#6b3f2a; --saddle-dark:#4a2a1c; --saddle-wash:rgba(107,63,42,.08);
+    --sage:#71805f; --sage-dark:#4f5c41;
+    --rust:#b5502f;
+    --cream:#f6f1e6; --surface:#fffdf8; --border:#e6dcc8;
+    --text:#2c2620; --text-dim:#6b5f4f;
+    --font-display:'Playfair Display',Georgia,serif;
+    --font-body:'Karla',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:84px}
+  html,body{margin:0;padding:0}
+  body{background:var(--cream);color:var(--text);font-family:var(--font-body);line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--font-display);margin:0;color:var(--text);text-wrap:balance;font-weight:600}
+  p{margin:0}
+  a{color:inherit}
+  main{max-width:1080px;margin:0 auto;padding:0 24px}
+  section{padding:60px 0}
+
+  .concept-tag{
+    position:fixed;bottom:14px;right:14px;z-index:50;background:rgba(44,38,32,.9);color:#fff;
+    font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;letter-spacing:.02em;font-family:var(--font-body);
+  }
+
+  .site-header{position:sticky;top:0;z-index:20;background:rgba(246,241,230,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .site-header-inner{max-width:1080px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-family:var(--font-display);font-weight:600;font-size:21px;color:var(--saddle-dark);text-decoration:none;font-style:italic}
+  .site-nav{display:flex;align-items:center;gap:24px}
+  .site-nav a{font-size:13.5px;font-weight:600;color:var(--text-dim);text-decoration:none;letter-spacing:.02em}
+  .site-nav a:not(.btn):hover{color:var(--saddle)}
+  .site-nav a.btn-saddle,.site-nav a.btn-saddle:hover,.site-nav a.btn-saddle:focus-visible{color:#fff}
+  @media (max-width:680px){ .site-nav a:not(.btn){display:none} }
+
+  .btn{font-family:var(--font-body);font-weight:700;font-size:14px;padding:13px 22px;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;cursor:pointer;letter-spacing:.01em}
+  .btn-rust{background:var(--rust);color:#fff}
+  .btn-rust:hover{background:#963f22}
+  .btn-outline{border-color:rgba(255,255,255,.75);color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+  .btn-saddle{background:var(--saddle);color:#fff}
+  .btn-saddle:hover{background:var(--saddle-dark)}
+
+  .hero{position:relative;min-height:70vh;display:flex;align-items:center;overflow:hidden}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;max-width:1080px;margin:0 auto;padding:70px 24px;width:100%}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:22px;height:1.5px;background:var(--rust)}
+  .hero h1{font-size:clamp(32px,4.6vw,54px);line-height:1.08;margin-top:16px;font-style:italic}
+  .hero p.lead{margin-top:18px;font-size:17px;color:var(--text-dim);max-width:46ch}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .hero-photo{border-radius:6px;overflow:hidden;box-shadow:0 24px 50px -20px rgba(44,38,32,.35);position:relative}
+  .hero-photo::after{content:"Placeholder image";position:absolute;bottom:0;left:0;right:0;background:rgba(44,38,32,.75);color:#f6f1e6;font-size:11px;font-weight:600;padding:8px 12px;letter-spacing:.02em}
+
+  .section-head{max-width:60ch;margin-bottom:36px}
+  .section-head .eyebrow{color:var(--saddle)}
+  .section-head .eyebrow::before{background:var(--saddle)}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);margin-top:12px;font-style:italic}
+  .section-head p{margin-top:12px;color:var(--text-dim);font-size:15.5px}
+
+  .ride-list{display:grid;gap:16px}
+  .ride-card{
+    background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:26px 28px;
+    display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;
+  }
+  .ride-card .tag{
+    font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--rust);
+    border:1px solid var(--rust);border-radius:999px;padding:5px 14px;white-space:nowrap;height:fit-content;
+  }
+  .ride-card h3{font-size:20px;font-style:italic}
+  .ride-card p{margin-top:8px;color:var(--text-dim);font-size:14.5px;line-height:1.7}
+  @media (max-width:640px){ .ride-card{grid-template-columns:1fr} .ride-card .tag{width:fit-content} }
+
+  .camp-band{background:var(--saddle-dark);border-radius:24px;color:#f6f1e6;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+  .camp-band .photo{position:relative;min-height:340px}
+  .camp-band .photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .camp-band .photo::after{content:"Placeholder image";position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.5);color:#f6f1e6;font-size:11px;font-weight:600;padding:8px 12px}
+  .camp-band .copy{padding:44px}
+  .camp-band .eyebrow{color:#e6b48f}
+  .camp-band .eyebrow::before{background:#e6b48f}
+  .camp-band h2{color:#fff;font-size:clamp(24px,3vw,30px);margin-top:12px;font-style:italic}
+  .camp-band p{margin-top:14px;color:#e4d9c8;font-size:15px;line-height:1.7}
+  .camp-band ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+  .camp-band li{font-size:14px;color:#f6f1e6;display:flex;gap:10px;align-items:flex-start}
+  .camp-band li svg{width:16px;height:16px;flex:none;margin-top:3px;color:#e6b48f}
+  @media (max-width:760px){ .camp-band{grid-template-columns:1fr} .camp-band .photo{min-height:220px} }
+
+  .info-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+  .info-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px}
+  .info-card + .info-card{margin-top:16px}
+  .info-card h3{font-size:15px;font-weight:700;font-family:var(--font-body);color:var(--saddle-dark);display:flex;align-items:center;gap:8px;font-style:normal}
+  .info-card h3 svg{width:18px;height:18px;color:var(--rust)}
+  .info-card .val{margin-top:8px;font-size:14.5px;color:var(--text-dim);line-height:1.7}
+  .note{font-size:12.5px;color:var(--text-dim);font-style:italic;margin-top:6px}
+  .map-frame{border-radius:12px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 34px -18px rgba(44,38,32,.35)}
+  .map-frame iframe{display:block;width:100%;height:340px;border:0}
+
+  .enquire{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:44px}
+  .enquire-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:36px}
+  .enquire h2{font-size:clamp(24px,3vw,30px);font-style:italic}
+  .enquire p{margin-top:12px;color:var(--text-dim);font-size:15px;max-width:42ch}
+  .form-field{margin-bottom:14px}
+  .form-field label{display:block;font-size:12.5px;font-weight:600;color:var(--text-dim);margin-bottom:6px}
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%;padding:12px 14px;border-radius:6px;border:1px solid var(--border);
+    background:#fff;color:var(--text);font-family:var(--font-body);font-size:14.5px;
+  }
+  .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-field input.invalid{border-color:var(--rust)}
+  .field-error{margin-top:6px;font-size:12.5px;color:var(--rust)}
+  .form-success{display:none;background:var(--saddle-wash);border:1px solid var(--saddle);border-radius:8px;padding:16px;margin-top:14px;font-size:14px;color:var(--saddle-dark)}
+  .form-success.show{display:block}
+
+  footer{padding:36px 0 64px;text-align:center;color:var(--text-dim);font-size:12.5px}
+  footer strong{color:var(--text)}
+
+  @media (max-width:820px){
+    .hero-grid{grid-template-columns:1fr;padding-top:36px;gap:28px}
+    .hero-photo{max-height:280px}
+    .hero-photo img{width:100%;height:100%;object-fit:cover}
+    .info-strip{grid-template-columns:1fr}
+    .enquire-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .form-row-2{grid-template-columns:1fr}
+    .enquire{padding:26px 20px}
+    .camp-band .copy{padding:28px}
+    section{padding:46px 0}
+    .concept-tag{font-size:10px;padding:5px 10px;right:10px;bottom:10px;max-width:min(220px,calc(100vw - 20px));white-space:normal;line-height:1.35;text-align:right}
+  }
+</style>
+</head>
+<body>
+
+<span class="concept-tag">Demo by SiteReviveSA</span>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="#top">Brackenridge Horse Trails</a>
+    <nav class="site-nav">
+      <a href="#rides">Rides</a>
+      <a href="#camp">Camping</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-saddle" href="#enquire">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="padding:0">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Brackenridge Valley (fictional demo location)</span>
+        <h1>Family-run trails across the valley.</h1>
+        <p class="lead">A demo concept for a family-run yard offering horse trails for every level — from a gentle forest amble to a full ride out to Brackenridge Falls — on horses that know these hills.</p>
+        <div class="hero-actions">
+          <a class="btn btn-rust" href="#enquire">Enquire About a Ride &rarr;</a>
+          <a class="btn btn-saddle" style="background:transparent;border-color:var(--saddle);color:var(--saddle)" href="#rides">See the rides</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ2hvcnNlIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzZiM2YyYSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzRhMmExYyIvPgo8L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjZ2hvcnNlKSIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTAuMCwyMzAuMCkgc2NhbGUoMSkiPjxwYXRoIGQ9Ik0zMCA3NSBRMjggNTUgNDAgNDUgUTM4IDMwIDUwIDIyIFE1OCAxOCA2MiAyNCBRNjggMjIgNzAgMzAgUTc2IDMyIDc0IDQwIEw2OCA0MiBRNzAgNTUgNjIgNjIgTDYyIDc1IE00MCA3NSBMNDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y2ZjFlNiIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgb3BhY2l0eT0iMC44NSIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjM1NS4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNmNmYxZTYiIG9wYWNpdHk9IjAuOSI+UGxhY2Vob2xkZXIgaW1hZ2U8L3RleHQ+Cjwvc3ZnPg==" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section id="rides">
+    <div class="section-head">
+      <span class="eyebrow">Rides for every level</span>
+      <h2>Choose your trail.</h2>
+      <p>A demo concept for a family-run yard, with horses suited to riders just starting out and confident riders alike.</p>
+    </div>
+    <div class="ride-list">
+      <article class="ride-card">
+        <span class="tag">Beginners</span>
+        <div>
+          <h3>Forest Amble</h3>
+          <p>An easy, unhurried ride through the forest — a gentle introduction for first-time riders or anyone after a calm outing.</p>
+        </div>
+      </article>
+      <article class="ride-card">
+        <span class="tag">Confident riders</span>
+        <div>
+          <h3>The Game Ride</h3>
+          <p>A livelier ride up onto the escarpment with trotting and cantering, and a chance to spot game along the way.</p>
+        </div>
+      </article>
+      <article class="ride-card">
+        <span class="tag">Half-day</span>
+        <div>
+          <h3>Brackenridge Falls Ride</h3>
+          <p>A longer half-day ride out to Brackenridge Falls, with a stop along the way to rest and enjoy a snack before heading back.</p>
+        </div>
+      </article>
+      <article class="ride-card">
+        <span class="tag">For kids</span>
+        <div>
+          <h3>Riding Lessons</h3>
+          <p>Lessons for local children on the farm, taught by an experienced yard team.</p>
+        </div>
+      </article>
+    </div>
+    <p class="note" style="margin-top:16px">Ride lengths, group sizes and pricing available on request — ask when you enquire.</p>
+  </section>
+
+  <section id="camp">
+    <div class="camp-band">
+      <div class="photo">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3RlbnQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjNmIzZjJhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNGEyYTFjIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNndGVudCkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUwLjAsMjMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMjAgTDg1IDgwIEwxNSA4MCBaIE01MCAyMCBMNTAgODAgTTMwIDgwIEw0NSA0NSBNNzAgODAgTDU1IDQ1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmNmYxZTYiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iMzU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2Y2ZjFlNiIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business">
+      </div>
+      <div class="copy">
+        <span class="eyebrow">Stay on the farm</span>
+        <h2>Camp under canvas, or bring your own.</h2>
+        <p>Beyond the trails, the farm hosts camping — either in one of the teepees or with your own tent — plus holiday riding camps for kids and a self-catering cottage.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21 12 3l9 18z"/></svg>Teepee camping, right on the farm</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>Bring your own tent</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9z"/></svg>Self-catering cottage on-site</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>Holiday riding camps for kids</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="section-head">
+      <span class="eyebrow">Plan your visit</span>
+      <h2>Find us, know before you go.</h2>
+    </div>
+    <div class="info-strip">
+      <div>
+        <div class="info-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Location</h3>
+          <div class="val">Example Farm Road, Brackenridge Valley <span style="font-size:11px;color:var(--text-dim)">(demo address — not real)</span></div>
+        </div>
+        <div class="info-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Contact</h3>
+          <div class="val">012 345 6789 <span style="font-size:11px;color:var(--text-dim)">(demo number — not real, does not connect)</span></div>
+        </div>
+        <div class="info-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>Booking</h3>
+          <div class="val">Family-run, so rides are best arranged ahead of time by phone or WhatsApp.</div>
+          <div class="note">Opening days and trail times shown here are illustrative examples for this demo.</div>
+        </div>
+      </div>
+      <div class="map-frame">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjYwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ21hcCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM0YTJhMWMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM2YjNmMmEiLz4KPC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2dtYXApIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQwMC4wLDIzMC4wKSBzY2FsZSgxKSI+PHBhdGggZD0iTTIwIDMwIEw0MCAyMiBMNjAgMzAgTDgwIDIyIEw4MCA3MCBMNjAgNzggTDQwIDcwIEwyMCA3OCBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNmNmYxZTYiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PHBhdGggZD0iTTQwIDIyIEw0MCA3MCBNNjAgMzAgTDYwIDc4IiBzdHJva2U9IiNmNmYxZTYiIHN0cm9rZS13aWR0aD0iMS42IiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQ4IiByPSI1IiBmaWxsPSIjZjZmMWU2IiBvcGFjaXR5PSIwLjkiLz48L2c+Cjx0ZXh0IHg9IjQ1MC4wIiB5PSIzNTUuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjZjZmMWU2IiBvcGFjaXR5PSIwLjkiPk1hcCAtIGRlbW8gcGxhY2Vob2xkZXI8L3RleHQ+Cjwvc3ZnPg==" alt="Map — demo placeholder, not a real location" style="display:block;width:100%;height:340px;object-fit:cover">
+      </div>
+    </div>
+  </section>
+
+  <section id="enquire">
+    <div class="enquire">
+      <div class="enquire-grid">
+        <div>
+          <span class="eyebrow">Ready to ride?</span>
+          <h2>Send an enquiry.</h2>
+          <p>Tell us a bit about who's riding and what you're after, and we'll get back to you with times and options.</p>
+          <p style="margin-top:22px;font-size:13px;color:var(--text-dim)">This is a concept demo — the form below shows how an enquiry flow would work, but nothing is actually sent.</p>
+        </div>
+        <form id="enquiryForm">
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Your name" aria-describedby="nameError">
+              <p class="field-error" id="nameError" hidden>Please enter your name.</p>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone / WhatsApp</label>
+              <input id="phone" name="phone" type="tel" required placeholder="082 123 4567" aria-describedby="phoneError">
+              <p class="field-error" id="phoneError" hidden>Please enter a phone number.</p>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="interest">What are you interested in?</label>
+            <select id="interest" name="interest">
+              <option>Forest Amble (beginners)</option>
+              <option>The Game Ride</option>
+              <option>Brackenridge Falls Ride</option>
+              <option>Riding lessons for a child</option>
+              <option>Farm camping (teepee or own tent)</option>
+              <option>Self-catering cottage</option>
+              <option>Holiday riding camps</option>
+              <option>Not sure — advise me</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="3" placeholder="Number of riders, experience level, preferred dates"></textarea>
+          </div>
+          <button class="btn btn-rust" type="submit" style="width:100%;justify-content:center">Send Enquiry</button>
+          <div class="form-success" id="formSuccess" role="status">Demo only — this is where your confirmation would appear. No enquiry was actually sent.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div><strong>Brackenridge Horse Trails</strong> &middot; Brackenridge Valley (fictional demo location)</div>
+  <div style="margin-top:6px">Demo website by SiteReviveSA. Branding, imagery and service details are illustrative.</div>
+</footer>
+
+<script>
+  (function(){
+    var form = document.getElementById('enquiryForm');
+    var success = document.getElementById('formSuccess');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var fields = [
+      { input: document.getElementById('name'), error: document.getElementById('nameError') },
+      { input: document.getElementById('phone'), error: document.getElementById('phoneError') }
+    ];
+
+    function setValidity(field, isValid){
+      field.input.classList.toggle('invalid', !isValid);
+      if(isValid){
+        field.input.removeAttribute('aria-invalid');
+      } else {
+        field.input.setAttribute('aria-invalid', 'true');
+      }
+      field.error.hidden = isValid;
+    }
+
+    fields.forEach(function(field){
+      field.input.addEventListener('input', function(){
+        if(field.input.value.trim().length > 0) setValidity(field, true);
+      });
+    });
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      success.classList.remove('show');
+
+      var firstInvalid = null;
+      var allValid = true;
+      fields.forEach(function(field){
+        var isValid = field.input.value.trim().length > 0;
+        setValidity(field, isValid);
+        if(!isValid){
+          allValid = false;
+          if(!firstInvalid) firstInvalid = field.input;
+        }
+      });
+
+      if(!allValid){
+        firstInvalid.focus();
+        return;
+      }
+
+      success.classList.add('show');
+      submitBtn.textContent = 'Enquiry captured — demo only';
+    });
+  })();
+</script>
+
+</body>
+</html>

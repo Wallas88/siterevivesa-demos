@@ -1,0 +1,8 @@
+{
+  // Anonymised concept demo (static only). Deployed as its own Worker so it
+  // gets a *.workers.dev URL the marketing site can link to.
+  "$schema": "../../site/node_modules/wrangler/config-schema.json",
+  "name": "stofpad-biltong-demo",
+  "compatibility_date": "2026-09-14",
+  "assets": { "directory": "./" }
+}

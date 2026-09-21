@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Petal &amp; Polish Nails (Demo Concept)</title>
+<meta name="description" content="Petal &amp; Polish Nails is an illustrative demo concept — gel &amp; acrylic nails, manicures, pedicures. Fictional business, demo only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:wght@400;600;700&family=Pacifico&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fdeef3;
+    --surface:#f6d3e0;
+    --surface-2:#ffffff;
+    --border:#e8a9c4;
+    --border-soft:#f1c2d8;
+    --text:#3d2b33;
+    --text-dim:#6e4552;
+    --text-faint:#a06b7f;
+    --accent:#d14c82;
+    --accent-strong:#a6356a;
+    --accent-wash:rgba(209,76,130,0.10);
+    --coral:#e89380;
+    --coral-wash:rgba(232,147,128,0.14);
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-body:'Mulish',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;-webkit-font-smoothing:antialiased}
+  body::before{
+    content:"";position:fixed;inset:-10%;z-index:0;pointer-events:none;
+    background-image:url("images/nail-pattern.svg");
+    background-repeat:repeat;background-size:300px 40px;
+    transform:rotate(-8deg);opacity:.05;
+  }
+  body > *{position:relative;z-index:1}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--font-display);text-wrap:balance;margin:0;color:var(--text)}
+  p{margin:0}
+  a{color:inherit}
+
+  main{max-width:920px;margin:0 auto;padding:0 22px}
+
+  /* ---- header / nav ---- */
+  .site-header{
+    position:sticky;top:0;z-index:20;background:rgba(253,238,243,0.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .site-header-inner{
+    max-width:920px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand-mark{width:46px;height:46px;border-radius:50%;overflow:hidden;border:1px solid var(--border);flex:none}
+  .brand-mark img{width:100%;height:100%;object-fit:cover}
+  .brand-word{line-height:1.05}
+  .brand-word .petal-word{
+    display:block;font-family:'Pacifico',cursive;font-size:22px;color:var(--accent);line-height:1;
+  }
+  .brand-word .nails-beauty{
+    display:block;font-family:'Dancing Script',cursive;font-weight:600;font-size:15px;color:var(--text-dim);
+    margin-top:1px;
+  }
+  .site-nav{display:flex;align-items:center;gap:22px}
+  .site-nav a{
+    font-family:var(--font-body);font-size:13.5px;font-weight:700;color:var(--text-dim);text-decoration:none;
+  }
+  .site-nav a:not(.btn):hover{color:var(--accent-strong)}
+  .site-nav .btn{padding:9px 18px;font-size:13px}
+  .site-nav .btn-primary{color:var(--bg)}
+  @media (max-width:640px){
+    .site-nav a:not(.btn){display:none}
+  }
+
+  /* ---- hero ---- */
+  .hero{padding:44px 0 44px;display:grid;grid-template-columns:0.95fr 1.05fr;gap:42px;align-items:center}
+  .eyebrow{
+    font-family:var(--font-body);font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--accent-strong);display:inline-flex;align-items:center;gap:8px;margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:999px;background:var(--coral)}
+  .hero h1{font-size:clamp(32px,4.8vw,50px);font-weight:700;line-height:1.08;letter-spacing:-.01em}
+  .hero h1 em{font-style:italic;color:var(--accent-strong)}
+  .hero-tagline{margin-top:18px;font-size:15.5px;font-weight:600;color:var(--text-dim);max-width:38ch;line-height:1.65}
+  .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+  .hero-actions .btn-primary{grid-column:1/-1;justify-content:center}
+  .hero-actions .btn-ghost{justify-content:center}
+  .btn{
+    font-family:var(--font-body);font-weight:700;font-size:14px;padding:13px 22px;border-radius:999px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-strong)}
+  .btn-ghost{border-color:var(--accent);color:var(--accent-strong)}
+  .btn-ghost:hover{background:var(--accent-wash)}
+
+  .hero-photo{
+    position:relative;border-radius:20px;overflow:hidden;aspect-ratio:4/3.1;
+    box-shadow:0 18px 38px -12px rgba(61,43,51,0.25);
+  }
+  .hero-carousel{
+    display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;
+    cursor:grab;user-select:none;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  .hero-carousel::-webkit-scrollbar{display:none}
+  .hero-carousel.dragging{cursor:grabbing;scroll-snap-type:none}
+  .hero-carousel .slide{flex:0 0 100%;height:100%;scroll-snap-align:start}
+  .hero-carousel .slide img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .hero-photo-badge{
+    position:absolute;bottom:14px;left:14px;background:rgba(255,255,255,0.95);border-radius:12px;
+    padding:9px 13px;display:flex;align-items:center;gap:9px;box-shadow:0 6px 16px rgba(61,43,51,0.14);
+    pointer-events:none;
+  }
+  .hero-photo-badge .stars{color:var(--coral);font-size:13px;letter-spacing:1px}
+  .hero-photo-badge .num{font-weight:700;font-size:13.5px}
+  .hero-photo-badge .src{font-size:11px;font-weight:700;color:var(--text-dim)}
+  .hero-dots{
+    position:absolute;bottom:14px;right:14px;display:flex;gap:5px;background:rgba(255,255,255,0.85);
+    padding:6px 8px;border-radius:999px;pointer-events:none;
+  }
+  .hero-dots span{width:5px;height:5px;border-radius:50%;background:var(--border);transition:background .15s,transform .15s}
+  .hero-nav-btn{
+    position:absolute;top:50%;right:14px;transform:translateY(-50%);
+    width:38px;height:38px;border-radius:50%;border:none;
+    background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 20px -4px rgba(209,76,130,0.55);cursor:pointer;
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .hero-nav-btn:hover{transform:translateY(-50%) scale(1.08);box-shadow:0 10px 24px -3px rgba(209,76,130,0.65)}
+  .hero-nav-btn:active{transform:translateY(-50%) scale(0.96)}
+  .hero-nav-btn svg{width:18px;height:18px}
+  .hero-dots span.active{background:var(--accent-strong);transform:scale(1.3)}
+
+  section{padding:38px 0;border-top:1px solid var(--border-soft)}
+  .section-head{margin-bottom:24px;text-align:center}
+  .section-head .eyebrow{justify-content:center}
+  .section-head h2{font-size:25px;font-weight:700}
+
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .service-card{background:var(--surface-2);border:1px solid var(--border);border-radius:16px;padding:22px;text-align:center}
+  .service-card .icon{
+    width:44px;height:44px;border-radius:50%;background:var(--accent-wash);color:var(--accent-strong);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:18px;
+  }
+  .service-card h3{font-size:16px;font-weight:600;margin-bottom:6px}
+  .service-card p{font-size:13px;font-weight:600;color:var(--text-dim);line-height:1.55}
+
+  .trust-panel{
+    background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:30px;
+    display:flex;flex-wrap:wrap;gap:26px;align-items:center;justify-content:space-between;
+  }
+  .trust-score{display:flex;align-items:center;gap:16px}
+  .trust-score .big{font-family:var(--font-display);font-size:40px;font-weight:700;color:var(--accent-strong);line-height:1}
+  .trust-score .stars{color:var(--coral);font-size:17px;letter-spacing:2px}
+  .trust-score .count{font-size:12.5px;font-weight:600;color:var(--text-dim);margin-top:2px}
+  .trust-platforms{display:flex;gap:10px;flex-wrap:wrap}
+  .trust-platforms span, .trust-platforms a{
+    background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:9px 15px;
+    font-size:12.5px;font-weight:700;text-decoration:none;color:inherit;
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .trust-platforms svg{width:17px;height:17px;flex:none;color:var(--accent-strong)}
+  .trust-platforms a{cursor:pointer;transition:border-color .18s ease,background .18s ease}
+  .trust-platforms a:hover{border-color:var(--accent);background:var(--surface)}
+  .trust-platforms span small, .trust-platforms a small{display:block;font-weight:400;color:var(--text-dim);font-size:11px;margin-top:2px}
+
+  .info-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+  .info-item{padding:20px 22px;border-right:1px solid var(--border-soft)}
+  .info-item:last-child{border-right:none}
+  .info-item .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent-strong);font-weight:700}
+  .info-item .lbl{display:flex;align-items:center;gap:7px}
+  .info-item .lbl svg{width:15px;height:15px;color:var(--accent-strong);flex:none}
+  .info-item .val{margin-top:6px;font-size:14px;font-weight:600;line-height:1.5;color:var(--text)}
+  .map-frame{
+    margin-top:16px;border:1px solid var(--border);border-radius:16px;overflow:hidden;
+    box-shadow:0 12px 28px -10px rgba(61,43,51,0.2);
+  }
+  .map-frame iframe{display:block;width:100%;height:260px;border:0}
+
+  .contact-band{
+    background:linear-gradient(155deg,var(--surface),var(--bg));border:1px solid var(--border);border-radius:22px;
+    padding:34px;text-align:center;
+  }
+  .contact-band h2{font-size:23px;font-weight:700}
+  .contact-band p{color:var(--text-dim);margin-top:9px;font-size:14px;font-weight:600}
+  .contact-band .hero-actions{justify-content:center;margin-top:22px}
+
+  footer{padding:26px 0 44px;text-align:center;color:var(--text-faint);font-size:12px}
+
+  @media (max-width:700px){
+    .hero{grid-template-columns:1fr}
+    .hero-photo{order:-1;aspect-ratio:4/3}
+    .service-grid{grid-template-columns:1fr}
+    .info-strip{grid-template-columns:1fr}
+    .info-item{border-right:none;border-bottom:1px solid var(--border-soft)}
+    .info-item:last-child{border-bottom:none}
+    .trust-panel{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAuMCwtMTAuMCkgc2NhbGUoMSkiPjxwYXRoIGQ9Ik01MCAxNSBMNTYgNDIgTDg0IDQ4IEw1NiA1NCBMNTAgODIgTDQ0IDU0IEwxNiA0OCBMNDQgNDIgWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmRlZWYzIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIG9wYWNpdHk9IjAuODUiLz48L2c+Cjx0ZXh0IHg9IjYwLjAiIHk9IjExNS4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNmZGVlZjMiIG9wYWNpdHk9IjAuOSI+UFA8L3RleHQ+Cjwvc3ZnPg==" alt="Petal &amp; Polish Nails logo — placeholder, illustrative only"></span>
+      <span class="brand-word"><span class="petal-word">Petal</span><span class="nails-beauty">&amp; Polish Nails</span></span>
+    </a>
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#info">Visit</a>
+      <a class="btn btn-primary" href="#" aria-disabled="true" tabindex="-1">Book Now (demo) &rarr;</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top" style="border-top:none;padding-top:38px">
+    <div>
+      <p class="eyebrow">Willow Grove (fictional demo location)</p>
+      <h1>Nails that finish<br>the look, <em>every time.</em></h1>
+      <p class="hero-tagline">This is a demo concept for a nail &amp; beauty studio — original example copy, not real business content.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#" aria-disabled="true" tabindex="-1">Book Online (demo) &rarr;</a>
+        <span class="btn btn-ghost" style="cursor:default">012 345 6789 (demo)</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="hero-carousel" id="heroCarousel">
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZTg5MzgwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZTg5MzgwIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZTg5MzgwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZTg5MzgwIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZTg5MzgwIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYTYzNTZhIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+        <div class="slide"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3NwYXJrbGUiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDE0YzgyIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZTg5MzgwIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnc3BhcmtsZSkiLz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTUwLjAsMTMwLjApIHNjYWxlKDEpIj48cGF0aCBkPSJNNTAgMTUgTDU2IDQyIEw4NCA0OCBMNTYgNTQgTDUwIDgyIEw0NCA1NCBMMTYgNDggTDQ0IDQyIFoiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZkZWVmMyIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PC9nPgo8dGV4dCB4PSIyMDAuMCIgeT0iMjU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2ZkZWVmMyIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="lazy"></div>
+      </div>
+      <div class="hero-dots" id="heroDots"></div>
+      <button type="button" class="hero-nav-btn" id="heroNext" aria-label="Next photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      var track = document.getElementById('heroCarousel');
+      var dotsWrap = document.getElementById('heroDots');
+      var slides = track.querySelectorAll('.slide');
+      slides.forEach(function(_, i){
+        var d = document.createElement('span');
+        if(i===0) d.className = 'active';
+        dotsWrap.appendChild(d);
+      });
+      var dots = dotsWrap.querySelectorAll('span');
+
+      function updateDots(){
+        var idx = Math.round(track.scrollLeft / track.clientWidth);
+        dots.forEach(function(d,i){ d.classList.toggle('active', i===idx); });
+      }
+      track.addEventListener('scroll', function(){
+        window.requestAnimationFrame(updateDots);
+      }, { passive:true });
+
+      var nextBtn = document.getElementById('heroNext');
+      if(nextBtn){
+        nextBtn.addEventListener('click', function(){
+          var atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
+          track.scrollTo({
+            left: atEnd ? 0 : track.scrollLeft + track.clientWidth,
+            behavior: 'smooth'
+          });
+        });
+      }
+
+      var isDown = false, startX, startScroll;
+      track.addEventListener('mousedown', function(e){
+        isDown = true; track.classList.add('dragging');
+        startX = e.pageX; startScroll = track.scrollLeft;
+      });
+      window.addEventListener('mouseup', function(){
+        if(!isDown) return;
+        isDown = false; track.classList.remove('dragging');
+        track.scrollLeft = Math.round(track.scrollLeft / track.clientWidth) * track.clientWidth;
+      });
+      window.addEventListener('mousemove', function(e){
+        if(!isDown) return;
+        e.preventDefault();
+        track.scrollLeft = startScroll - (e.pageX - startX);
+      });
+    })();
+  </script>
+
+  <section id="services">
+    <div class="section-head">
+      <p class="eyebrow">What we do</p>
+      <h2>Every set, custom to you.</h2>
+    </div>
+    <div class="service-grid">
+      <article class="service-card">
+        <div class="icon">&#128132;</div>
+        <h3>Gel &amp; acrylic nails</h3>
+        <p>Gel extensions, dip powder, hybrid sets, and hand-painted nail art.</p>
+      </article>
+      <article class="service-card">
+        <div class="icon">&#129462;</div>
+        <h3>Manicures &amp; pedicures</h3>
+        <p>Classic, gel, and fish pedicure options — including sets for men.</p>
+      </article>
+      <article class="service-card">
+        <div class="icon">&#128197;</div>
+        <h3>Easy online booking</h3>
+        <p>Book your slot directly, no back-and-forth messaging required.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="info">
+    <div class="section-head">
+      <p class="eyebrow">Find us</p>
+      <h2>Open six days a week.</h2>
+    </div>
+    <div class="info-strip">
+      <div class="info-item">
+        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>Hours <span style="font-weight:400;font-size:11px">(example)</span></div>
+        <div class="val">Tue&ndash;Fri 8am&ndash;5pm<br>Sat 8am&ndash;3pm</div>
+      </div>
+      <div class="info-item">
+        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Address</div>
+        <div class="val">12 Willow Grove Road<br>Willow Grove <span style="font-size:11px">(demo address — not real)</span></div>
+      </div>
+      <div class="info-item">
+        <div class="lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Contact</div>
+        <div class="val">012 345 6789 <span style="font-size:11px">(demo — not real)</span></div>
+      </div>
+    </div>
+    <div class="map-frame">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNTIwIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUyMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ21hcCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNhNjM1NmEiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNkMTRjODIiLz4KPC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iNTIwIiBmaWxsPSJ1cmwoI2dtYXApIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQwMC4wLDE5MC4wKSBzY2FsZSgxKSI+PHBhdGggZD0iTTIwIDMwIEw0MCAyMiBMNjAgMzAgTDgwIDIyIEw4MCA3MCBMNjAgNzggTDQwIDcwIEwyMCA3OCBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZGVlZjMiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PHBhdGggZD0iTTQwIDIyIEw0MCA3MCBNNjAgMzAgTDYwIDc4IiBzdHJva2U9IiNmZGVlZjMiIHN0cm9rZS13aWR0aD0iMS42IiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQ4IiByPSI1IiBmaWxsPSIjZmRlZWYzIiBvcGFjaXR5PSIwLjkiLz48L2c+Cjx0ZXh0IHg9IjQ1MC4wIiB5PSIzMTUuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjZmRlZWYzIiBvcGFjaXR5PSIwLjkiPk1hcCAtIGRlbW8gcGxhY2Vob2xkZXI8L3RleHQ+Cjwvc3ZnPg==" alt="Map — demo placeholder, not a real location" style="display:block;width:100%;height:260px;object-fit:cover">
+    </div>
+  </section>
+
+  <section id="contact" style="border-top:none">
+    <div class="contact-band">
+      <h2>Ready for your next set?</h2>
+      <p>Tell us the style you're after &mdash; we'll take it from there.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#" aria-disabled="true" tabindex="-1">Book Online (demo) &rarr;</a>
+        <span class="btn btn-ghost" style="cursor:default">012 345 6789 (demo)</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Petal &amp; Polish Nails &middot; Willow Grove (fictional demo location)<br>
+    Demo website by SiteReviveSA. Branding, imagery and service details are illustrative.
+  </footer>
+</main>
+</body>
+</html>

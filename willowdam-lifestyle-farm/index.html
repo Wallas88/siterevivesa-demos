@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willowdam Lifestyle Farm (Demo Concept)</title>
+<meta name="description" content="Willowdam Lifestyle Farm is an illustrative demo concept — a self-catering chalet, cottage and tiny house on a working farm, off-grid and solar-powered. Fictional business, demo only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#7c8c6c; --sage-dark:#5c6a4e; --sage-wash:rgba(124,140,108,.1);
+    --clay:#b9663f; --clay-dark:#8f4d2d;
+    --linen:#f7f3ea; --surface:#fffdf8; --border:#e5ddc9;
+    --ink:#2c2a22; --ink-dim:#665f4e;
+    --font-display:'Newsreader',Georgia,serif;
+    --font-body:'Public Sans',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--linen);color:var(--ink);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--font-display);margin:0;color:var(--ink);text-wrap:balance;font-weight:600}
+  p{margin:0}
+  a{color:inherit}
+  main{max-width:1040px;margin:0 auto;padding:0 24px}
+  section{padding:64px 0}
+
+  .concept-tag{
+    position:fixed;bottom:14px;right:14px;z-index:50;background:rgba(44,42,34,.9);color:#fff;
+    font-size:11px;font-weight:600;padding:6px 12px;border-radius:999px;letter-spacing:.02em;
+  }
+  .illustrative-note{
+    display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:#fff;
+    background:rgba(44,42,34,.55);padding:5px 10px;border-radius:999px;backdrop-filter:blur(3px);
+  }
+
+  .site-header{position:sticky;top:0;z-index:20;background:rgba(247,243,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .site-header-inner{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+  .brand{font-family:var(--font-display);font-weight:600;font-size:20px;color:var(--sage-dark);text-decoration:none;letter-spacing:.01em}
+  .site-nav{display:flex;align-items:center;gap:24px}
+  .site-nav a{font-size:13.5px;font-weight:600;color:var(--ink-dim);text-decoration:none;letter-spacing:.01em}
+  .site-nav a:not(.btn):hover{color:var(--clay)}
+  @media (max-width:680px){ .site-nav a:not(.btn){display:none} }
+
+  .btn{font-family:var(--font-body);font-weight:600;font-size:14px;padding:13px 22px;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1.5px solid transparent;cursor:pointer}
+  .btn-clay{background:var(--clay);color:#fff}
+  .btn-clay:hover{background:var(--clay-dark)}
+  .btn-outline{border-color:rgba(255,255,255,.75);color:#fff}
+  .btn-outline:hover{background:rgba(255,255,255,.12)}
+  .btn-sage{border-color:var(--sage);color:var(--sage-dark)}
+  .btn-sage:hover{background:var(--sage-wash)}
+
+  .hero{position:relative;min-height:74vh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(44,42,34,.1) 0%, rgba(30,28,22,.2) 40%, rgba(20,19,14,.82) 100%)}
+  .hero-inner{position:relative;z-index:1;padding:44px 24px 48px;max-width:1040px;margin:0 auto;width:100%;color:#fff}
+  .hero-tag-row{margin-bottom:14px}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#d8c9a3;display:inline-flex;align-items:center;gap:8px}
+  .eyebrow::before{content:"";width:20px;height:1.5px;background:#d8c9a3}
+  .hero h1{font-size:clamp(32px,5.2vw,58px);line-height:1.1;font-style:italic;color:#fff}
+  .hero p.lead{margin-top:16px;font-size:16.5px;color:#ede7d8;max-width:50ch}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+  .section-head{max-width:60ch;margin-bottom:38px}
+  .section-head .eyebrow{color:var(--clay)}
+  .section-head .eyebrow::before{background:var(--clay)}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);margin-top:12px;font-style:italic}
+  .section-head p{margin-top:14px;color:var(--ink-dim);font-size:15.5px}
+
+  .stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .stay-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px}
+  .stay-card .cap{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage-dark)}
+  .stay-card h3{font-size:21px;margin-top:8px;font-style:italic}
+  .stay-card p{margin-top:10px;font-size:14px;color:var(--ink-dim);line-height:1.7}
+
+  .river-band{background:var(--sage-dark);border-radius:26px;color:#f7f3ea;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+  .river-band .photo{position:relative;min-height:360px}
+  .river-band .photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+  .river-band .photo .illustrative-note{position:absolute;bottom:14px;left:14px}
+  .river-band .copy{padding:46px}
+  .river-band .eyebrow{color:#c9d6ba}
+  .river-band .eyebrow::before{background:#c9d6ba}
+  .river-band h2{color:#fff;font-size:clamp(24px,3vw,30px);margin-top:12px;font-style:italic}
+  .river-band p{margin-top:14px;color:#dfe6d3;font-size:15px;line-height:1.75}
+  .river-band ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+  .river-band li{font-size:14px;color:#f7f3ea;display:flex;gap:10px;align-items:flex-start}
+  .river-band li svg{width:16px;height:16px;flex:none;margin-top:3px;color:#c9d6ba}
+  @media (max-width:760px){ .river-band{grid-template-columns:1fr} .river-band .photo{min-height:220px} }
+
+  .gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .gallery-grid figure{margin:0;border-radius:14px;overflow:hidden;position:relative}
+  .gallery-grid img{width:100%;height:280px;object-fit:cover;display:block}
+  .gallery-grid figcaption{position:absolute;bottom:12px;left:12px}
+
+  .info-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}
+  .info-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+  .info-card + .info-card{margin-top:16px}
+  .info-card h3{font-size:15px;font-weight:700;font-family:var(--font-body);color:var(--sage-dark);display:flex;align-items:center;gap:8px}
+  .info-card h3 svg{width:18px;height:18px;color:var(--clay)}
+  .info-card .val{margin-top:8px;font-size:14.5px;color:var(--ink-dim);line-height:1.7}
+  .map-frame{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 34px -18px rgba(44,42,34,.3)}
+  .map-frame iframe{display:block;width:100%;height:340px;border:0}
+
+  .enquire{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:44px}
+  .enquire-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:36px}
+  .enquire h2{font-size:clamp(24px,3vw,30px);font-style:italic}
+  .enquire p{margin-top:12px;color:var(--ink-dim);font-size:15px;max-width:42ch}
+  .form-field{margin-bottom:14px}
+  .form-field label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-dim);margin-bottom:6px}
+  .form-field input, .form-field select, .form-field textarea{
+    width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border);
+    background:#fff;color:var(--ink);font-family:var(--font-body);font-size:14.5px;
+  }
+  .form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .form-success{display:none;background:var(--sage-wash);border:1px solid var(--sage);border-radius:8px;padding:16px;margin-top:14px;font-size:14px;color:var(--sage-dark)}
+  .form-success.show{display:block}
+
+  footer{padding:38px 0 46px;text-align:center;color:var(--ink-dim);font-size:12.5px}
+  footer strong{color:var(--ink)}
+
+  @media (max-width:820px){
+    .stay-grid{grid-template-columns:1fr}
+    .info-strip{grid-template-columns:1fr}
+    .enquire-grid{grid-template-columns:1fr}
+    .gallery-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:520px){
+    .form-row-2{grid-template-columns:1fr}
+    .enquire{padding:26px 20px}
+    .river-band .copy{padding:28px}
+    section{padding:48px 0}
+  }
+</style>
+</head>
+<body>
+
+<span class="concept-tag">Demo by SiteReviveSA</span>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="brand" href="#top">Willowdam</a>
+    <nav class="site-nav">
+      <a href="#stay">Stay</a>
+      <a href="#farm">The Farm</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-clay" href="#enquire">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" style="padding:0;max-width:none">
+  <section class="hero" style="padding:0">
+    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDgwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iODAwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnd2F0ZXIiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjN2M4YzZjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNWM2YTRlIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjZ3dhdGVyKSIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NTAuMCwzMzAuMCkgc2NhbGUoMSkiPjxwYXRoIGQ9Ik0xNSA0NSBRMjUgMzUgMzUgNDUgVDU1IDQ1IFQ3NSA0NSBUOTUgNDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y3ZjNlYSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC44NSIvPjxwYXRoIGQ9Ik0xNSA2MCBRMjUgNTAgMzUgNjAgVDU1IDYwIFQ3NSA2MCBUOTUgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y3ZjNlYSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC43Ii8+PHBhdGggZD0iTTE1IDc1IFEyNSA2NSAzNSA3NSBUNTUgNzUgVDc1IDc1IFQ5NSA3NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjdmM2VhIiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjU1Ii8+PC9nPgo8dGV4dCB4PSI2MDAuMCIgeT0iNDU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2Y3ZjNlYSIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business" loading="eager">
+    <div class="hero-inner">
+      <div class="hero-tag-row"><span class="illustrative-note">Placeholder image — demo only</span></div>
+      <span class="eyebrow">Millrace River (fictional demo location)</span>
+      <h1>A working farm on the river, off the grid and unhurried.</h1>
+      <p class="lead">Willowdam Lifestyle Farm is a demo concept — three self-catering stays, farm animals underfoot, and water at the doorstep.</p>
+      <div class="hero-actions">
+        <a class="btn btn-clay" href="#enquire">Enquire About a Stay &rarr;</a>
+        <a class="btn btn-outline" href="#stay">See the stays</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="max-width:1040px;margin:0 auto;padding:0 24px">
+    <section id="stay">
+      <div class="section-head">
+        <span class="eyebrow">Where you'll stay</span>
+        <h2>Three ways to settle in.</h2>
+        <p>Each unit is self-catering with its own kitchen, fireplace and braai — sixteen guests across all three if you're taking the whole farm.</p>
+      </div>
+      <div class="stay-grid">
+        <article class="stay-card">
+          <span class="cap">Sleeps 6</span>
+          <h3>The Chalet</h3>
+          <p>A full self-catering chalet with its own kitchen and fireplace, looking out over the farm.</p>
+        </article>
+        <article class="stay-card">
+          <span class="cap">Sleeps 6 &middot; 2 bedrooms</span>
+          <h3>The Cottage</h3>
+          <p>A two-bedroom cottage with its own bathroom, kitchen and braai area — room to spread out.</p>
+        </article>
+        <article class="stay-card">
+          <span class="cap">Sleeps 2</span>
+          <h3>The Tiny House</h3>
+          <p>A compact, self-contained stay for two — the simplest way to slow down for a few days.</p>
+        </article>
+      </div>
+      <p class="note" style="margin-top:16px;font-size:12.5px;color:var(--ink-dim);font-style:italic">Rates aren't listed here — ask when you enquire.</p>
+    </section>
+  </div>
+
+  <div style="max-width:1040px;margin:0 auto;padding:0 24px">
+    <section id="farm">
+      <div class="river-band">
+        <div class="photo">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ2Zhcm1ob3VzZSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM3YzhjNmMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM1YzZhNGUiLz4KPC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2dmYXJtaG91c2UpIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1MC4wLDIzMC4wKSBzY2FsZSgxKSI+PHBhdGggZD0iTTIwIDgwIEwyMCA0NSBMNTAgMjIgTDgwIDQ1IEw4MCA4MCBaIE0zNSA4MCBMMzUgNTggTDQ4IDU4IEw0OCA4MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjdmM2VhIiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgb3BhY2l0eT0iMC44NSIvPjwvZz4KPHRleHQgeD0iNDAwLjAiIHk9IjM1NS4wIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSI2MDAiIGZpbGw9IiNmN2YzZWEiIG9wYWNpdHk9IjAuOSI+UGxhY2Vob2xkZXIgaW1hZ2U8L3RleHQ+Cjwvc3ZnPg==" alt="Placeholder image — illustrative only, not an actual photo of a real business">
+          <span class="illustrative-note">Placeholder image — demo only</span>
+        </div>
+        <div class="copy">
+          <span class="eyebrow">Life on the farm</span>
+          <h2>Animals, water, and quiet.</h2>
+          <p>It's a real working farm — horses, chickens, sheep and a dairy cow that provides fresh milk daily. Complimentary water-sport equipment is on hand for the river and two dams on the property.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16M4 4l16 4-16 4"/></svg>Complimentary river &amp; dam water-sport gear</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6c0 4 6 12 6 12s6-8 6-12a6 6 0 0 0-6-6z"/><circle cx="12" cy="9" r="2"/></svg>Horses, chickens, sheep &amp; a dairy cow</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-13h-7z"/></svg>Off-grid, solar-powered</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>Pet-friendly by request</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-head">
+        <span class="eyebrow">A sense of the setting</span>
+        <h2>The kind of place this is.</h2>
+        <p>These are placeholder images for this demo concept — not photos of a real property.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNjAwIiB3aWR0aD0iODAwIiBoZWlnaHQ9IjYwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3dhdGVyIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzdjOGM2YyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzVjNmE0ZSIvPgo8L2xpbmVhckdyYWRpZW50PjwvZGVmcz4KPHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9InVybCgjZ3dhdGVyKSIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTAuMCwyMzAuMCkgc2NhbGUoMSkiPjxwYXRoIGQ9Ik0xNSA0NSBRMjUgMzUgMzUgNDUgVDU1IDQ1IFQ3NSA0NSBUOTUgNDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y3ZjNlYSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC44NSIvPjxwYXRoIGQ9Ik0xNSA2MCBRMjUgNTAgMzUgNjAgVDU1IDYwIFQ3NSA2MCBUOTUgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y3ZjNlYSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC43Ii8+PHBhdGggZD0iTTE1IDc1IFEyNSA2NSAzNSA3NSBUNTUgNzUgVDc1IDc1IFQ5NSA3NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjdmM2VhIiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjU1Ii8+PC9nPgo8dGV4dCB4PSI0MDAuMCIgeT0iMzU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2Y3ZjNlYSIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business">
+          <figcaption class="illustrative-note">Placeholder image — demo only</figcaption>
+        </figure>
+        <figure>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDgwMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iODAwIj4KPGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnd2F0ZXIiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjN2M4YzZjIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNWM2YTRlIi8+CjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPgo8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9InVybCgjZ3dhdGVyKSIvPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NTAuMCwzMzAuMCkgc2NhbGUoMSkiPjxwYXRoIGQ9Ik0xNSA0NSBRMjUgMzUgMzUgNDUgVDU1IDQ1IFQ3NSA0NSBUOTUgNDUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y3ZjNlYSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC44NSIvPjxwYXRoIGQ9Ik0xNSA2MCBRMjUgNTAgMzUgNjAgVDU1IDYwIFQ3NSA2MCBUOTUgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y3ZjNlYSIgc3Ryb2tlLXdpZHRoPSIyLjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iMC43Ii8+PHBhdGggZD0iTTE1IDc1IFEyNSA2NSAzNSA3NSBUNTUgNzUgVDc1IDc1IFQ5NSA3NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjdmM2VhIiBzdHJva2Utd2lkdGg9IjIuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIwLjU1Ii8+PC9nPgo8dGV4dCB4PSI2MDAuMCIgeT0iNDU1LjAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZm9udC13ZWlnaHQ9IjYwMCIgZmlsbD0iI2Y3ZjNlYSIgb3BhY2l0eT0iMC45Ij5QbGFjZWhvbGRlciBpbWFnZTwvdGV4dD4KPC9zdmc+" alt="Placeholder image — illustrative only, not an actual photo of a real business">
+          <figcaption class="illustrative-note">Placeholder image — demo only</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="section-head">
+        <span class="eyebrow">Plan your stay</span>
+        <h2>Find us, know before you go.</h2>
+      </div>
+      <div class="info-strip">
+        <div>
+          <div class="info-card">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Address</h3>
+            <div class="val">Example Farm Road, Willowdam <span style="font-size:11px;color:var(--ink-dim)">(demo address — not real)</span></div>
+          </div>
+          <div class="info-card">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Contact</h3>
+            <div class="val">012 345 6789 <span style="font-size:11px;color:var(--ink-dim)">(demo number — not real, does not connect)</span></div>
+          </div>
+          <div class="info-card">
+            <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg>Good to know</h3>
+            <div class="val">Off-grid and solar-powered, so it's worth asking about connectivity and what to bring before you arrive.</div>
+          </div>
+        </div>
+        <div class="map-frame">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNjAwIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjYwMCI+CjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ21hcCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM1YzZhNGUiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3YzhjNmMiLz4KPC9saW5lYXJHcmFkaWVudD48L2RlZnM+CjxyZWN0IHdpZHRoPSI5MDAiIGhlaWdodD0iNjAwIiBmaWxsPSJ1cmwoI2dtYXApIi8+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQwMC4wLDIzMC4wKSBzY2FsZSgxKSI+PHBhdGggZD0iTTIwIDMwIEw0MCAyMiBMNjAgMzAgTDgwIDIyIEw4MCA3MCBMNjAgNzggTDQwIDcwIEwyMCA3OCBaIiBmaWxsPSJub25lIiBzdHJva2U9IiNmN2YzZWEiIHN0cm9rZS13aWR0aD0iMi4yIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIwLjg1Ii8+PHBhdGggZD0iTTQwIDIyIEw0MCA3MCBNNjAgMzAgTDYwIDc4IiBzdHJva2U9IiNmN2YzZWEiIHN0cm9rZS13aWR0aD0iMS42IiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjQ4IiByPSI1IiBmaWxsPSIjZjdmM2VhIiBvcGFjaXR5PSIwLjkiLz48L2c+Cjx0ZXh0IHg9IjQ1MC4wIiB5PSIzNTUuMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1IiBmb250LXdlaWdodD0iNjAwIiBmaWxsPSIjZjdmM2VhIiBvcGFjaXR5PSIwLjkiPk1hcCAtIGRlbW8gcGxhY2Vob2xkZXI8L3RleHQ+Cjwvc3ZnPg==" alt="Map — demo placeholder, not a real location" style="display:block;width:100%;height:340px;object-fit:cover">
+        </div>
+      </div>
+    </section>
+
+    <section id="enquire">
+      <div class="enquire">
+        <div class="enquire-grid">
+          <div>
+            <span class="eyebrow">Ready to slow down?</span>
+            <h2>Send an enquiry.</h2>
+            <p>Let us know which stay you're after and when, and we'll get back to you with availability.</p>
+            <p style="margin-top:22px;font-size:13px;color:var(--ink-dim)">This is a concept demo — the form below shows how an enquiry flow would work, but nothing is actually sent.</p>
+          </div>
+          <form id="enquiryForm" novalidate>
+            <div class="form-row-2">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required placeholder="Your name">
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" name="phone" type="tel" required placeholder="082 123 4567">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="unit">Which stay?</label>
+              <select id="unit" name="unit">
+                <option>The Chalet (sleeps 6)</option>
+                <option>The Cottage (sleeps 6)</option>
+                <option>The Tiny House (sleeps 2)</option>
+                <option>Not sure — advise me</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="3" placeholder="Preferred dates, number of guests, anything else"></textarea>
+            </div>
+            <button class="btn btn-clay" type="submit" style="width:100%;justify-content:center">Send Enquiry</button>
+            <div class="form-success" id="formSuccess">Thanks — this is where a real confirmation would appear. No message was actually sent.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div><strong>Willowdam Lifestyle Farm</strong> &middot; Millrace River (fictional demo location)</div>
+  <div style="margin-top:6px">Demo website by SiteReviveSA. Branding, imagery and service details are illustrative.</div>
+</footer>
+
+<script>
+  document.getElementById('enquiryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var success = document.getElementById('formSuccess');
+    success.classList.add('show');
+    this.querySelector('button[type="submit"]').textContent = 'Sent (demo only)';
+  });
+</script>
+
+</body>
+</html>

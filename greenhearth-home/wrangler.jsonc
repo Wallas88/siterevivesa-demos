@@ -1,0 +1,6 @@
+{
+  "$schema": "../../site/node_modules/wrangler/config-schema.json",
+  "name": "greenhearth-demo",
+  "compatibility_date": "2026-09-14",
+  "assets": { "directory": "./" }
+}
