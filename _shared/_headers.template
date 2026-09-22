@@ -1,0 +1,11 @@
+# The headers every demo ships with. Copy this file to a demo folder as
+# `_headers` before its first deploy, and widen the CSP only for what that
+# demo actually loads (a font host, for example) — see greenhearth-home.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,12 @@
+# Served by Workers static assets from this folder (see wrangler.jsonc). Same
+# set as the other demos, with Google Fonts allowed because this one loads its
+# typefaces from there (stylesheet from fonts.googleapis.com, files from
+# fonts.gstatic.com). 'unsafe-inline' for styles covers the style="" attributes.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  X-Robots-Tag: noindex, nofollow
