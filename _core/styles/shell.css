@@ -1,0 +1,105 @@
+/*
+ * shell.css — the two views and how they sit. Phones (up to 1023px): the
+ * Website / Admin switch sticks to the top, above both views, and only the
+ * chosen view shows, fading in. Wide screens: the website on the left, the
+ * admin in a phone frame on the right that stays in view while the site
+ * scrolls.
+ */
+.view-switch {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 8px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.view-switch-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 4px;
+  background: var(--surface-sunk);
+  border-radius: 12px;
+}
+
+.view-switch-tab {
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color var(--ease-quick) ease-out,
+    color var(--ease-quick) ease-out;
+}
+
+.view-switch-tab[aria-selected="true"] {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-1);
+}
+
+/* How much of the top of a phone screen the switch covers: its padding, the tabs' padding, a 44px tab and the border.
+ * A demo whose own header is sticky sits it just under the switch. */
+.demo-shell {
+  --view-switch-height: 0px;
+}
+
+@media (max-width: 1023px) {
+  .demo-shell {
+    --view-switch-height: calc(2 * 8px + 2 * 4px + 44px + 1px);
+  }
+
+  .demo-shell[data-view="site"] .demo-pane-admin,
+  .demo-shell[data-view="admin"] .demo-pane-site {
+    display: none;
+  }
+
+  .demo-pane {
+    animation: fade-in var(--ease-quick) ease-out;
+  }
+
+  .site-section,
+  .site-hero {
+    scroll-margin-top: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .view-switch {
+    display: none;
+  }
+
+  .demo-panes {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 32px;
+    max-width: 1760px;
+    margin: 0 auto;
+    padding: 0 32px;
+    align-items: start;
+  }
+
+  .demo-pane-admin {
+    position: sticky;
+    top: 32px;
+    margin-top: 32px;
+  }
+
+  .phone-frame {
+    height: calc(100vh - 64px);
+    max-height: 880px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border: 12px solid var(--bezel);
+    border-radius: 40px;
+    background: var(--surface);
+    box-shadow: var(--shadow-2);
+  }
+}

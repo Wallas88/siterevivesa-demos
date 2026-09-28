@@ -1,0 +1,201 @@
+/*
+ * shop-order.css — "Your favourites, together.": the order panel, its
+ * lines (fixed slots, like the admin lists), the courier choice with a
+ * 44px box, the serif total, the message fold and the WhatsApp button.
+ * The summary and the message ease open and closed (grid-template-rows
+ * 0fr ↔ 1fr) instead of snapping.
+ */
+.order-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 48px;
+}
+
+.order-intro {
+  min-width: 0;
+}
+
+.order-panel {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.empty-order {
+  margin: 0;
+  color: var(--muted);
+}
+
+.order-lines {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order-slot {
+  display: grid;
+  grid-template-rows: 1fr;
+  border-bottom: 1px solid var(--line);
+}
+
+.order-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 96px;
+  padding: 16px 0;
+  animation: fade-in var(--ease-quick) ease-out;
+}
+
+.line-title {
+  margin-bottom: 4px;
+  font: var(--text-title) / 1.15 var(--serif);
+}
+
+.line-meta {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: var(--text-small);
+}
+
+.line-price {
+  font-weight: 400;
+}
+
+.line-controls {
+  flex: 0 0 96px;
+}
+
+.line-label {
+  display: block;
+  color: var(--muted);
+  font-size: var(--text-small);
+}
+
+.line-quantity {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid #ffffff35;
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.line-remove {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-size: var(--text-small);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.left-out-note[data-shown="false"],
+.pending-note[data-shown="false"] {
+  visibility: hidden;
+}
+
+.order-summary,
+.message-fold .fold-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--ease-duration) ease-out;
+}
+
+.order-summary[data-open="true"],
+.message-fold[data-open="true"] .fold-body {
+  grid-template-rows: 1fr;
+}
+
+.fold-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.courier-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+/* A 44px box to tap, drawn in the shop's colours; the tick is an inline SVG. */
+.courier-box {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--bg) center / 24px no-repeat;
+  appearance: none;
+  cursor: pointer;
+}
+
+.courier-box:checked {
+  border-color: var(--accent);
+  background-color: var(--accent);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231c1510' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E");
+}
+
+.order-total {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+}
+
+.order-total-amount {
+  font: var(--text-title) var(--serif);
+}
+
+.message-fold {
+  margin: 24px 0;
+}
+
+.message-toggle {
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: var(--text-small);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.order-message {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font: var(--text-small) / 1.7 var(--font);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.whatsapp-order {
+  width: 100%;
+}
+
+@container shop (max-width: 1000px) {
+  .order-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@container shop (max-width: 700px) {
+  .order-panel {
+    padding: 16px;
+  }
+}

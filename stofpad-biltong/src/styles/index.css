@@ -1,0 +1,12 @@
+/* index.css — Stofpad's stylesheets in cascade order: its tokens and
+ * base, the shared shell and controls, the shop, the shared admin look and
+ * Stofpad's admin parts, and the shared motion rules last. */
+@import "./tokens.css";
+@import "./base.css";
+@import "../../../_core/styles/shell.css";
+@import "../../../_core/styles/controls.css";
+@import "./shop.css";
+@import "./shop-order.css";
+@import "../../../_core/styles/admin.css";
+@import "./admin.css";
+@import "../../../_core/styles/motion.css";

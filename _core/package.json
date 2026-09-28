@@ -1,0 +1,29 @@
+{
+  "name": "demo-core",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "What the TypeScript demos share: results and errors, the browser store, photos, the mock sign-in, hours, specials, lists, the view switch, shared styles and the check scripts.",
+  "scripts": {
+    "test": "node --test tests/*.test.ts",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "typecheck": "tsc --noEmit",
+    "code-check": "node checks/code/code-check.ts checks controls demo hours lists pages photos prices result sign-in specials storage tests view",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run code-check && npm test"
+  },
+  "peerDependencies": {
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.14",
+    "@types/node": "26.6.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "rolldown": "1.2.6",
+    "typescript": "7.0.2",
+    "vite": "8.2.2"
+  }
+}

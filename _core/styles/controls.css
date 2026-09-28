@@ -1,0 +1,122 @@
+/*
+ * controls.css — buttons, form fields and the label that keeps its width.
+ * Every control is at least 44px to tap; hover colour only where a mouse
+ * can hover, and no control ever moves or scales when tapped.
+ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 16px;
+  border: var(--button-border) solid transparent;
+  border-radius: 10px;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--ease-quick) ease-out,
+    border-color var(--ease-quick) ease-out;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.button-secondary {
+  background: var(--surface);
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.button-danger {
+  background: var(--danger);
+  color: var(--accent-ink);
+}
+
+.button:disabled {
+  background: var(--surface-sunk);
+  color: var(--muted);
+  border-color: var(--line-strong);
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  .button-primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+
+  .button-secondary:hover:not(:disabled) {
+    border-color: var(--ink);
+  }
+}
+
+.button-icon {
+  padding: 8px 12px;
+  font-size: 20px;
+}
+
+.swap-label {
+  display: inline-grid;
+}
+
+.swap-label-item {
+  grid-area: 1 / 1;
+}
+
+.swap-label-item[data-shown="false"] {
+  visibility: hidden;
+}
+
+.field {
+  display: grid;
+  gap: 4px;
+}
+
+.field-label {
+  font-weight: 700;
+}
+
+.field-count {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.field-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid var(--line-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+}
+
+/* Time and date fields focus their inner parts (including the picker icon), which :focus-visible alone
+ * doesn't paint on the field; :focus-within covers every part. */
+.field-input:focus,
+.field-input:focus-within {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.field-textarea {
+  resize: vertical;
+}
+
+.field-input[aria-invalid="true"] {
+  border-color: var(--danger);
+}
+
+.form-status {
+  min-height: 3em;
+  color: var(--muted);
+}

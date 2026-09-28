@@ -1,0 +1,274 @@
+/*
+ * site.css — the fictional business's website: header, hero, services,
+ * recent jobs, enquiry form and footer. Mobile first; two or three columns
+ * where there is room.
+ */
+.site-header,
+.site-hero,
+.site-section,
+.site-footer {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-header-action {
+  white-space: nowrap;
+}
+
+.site-brand-mark {
+  width: 32px;
+  height: 32px;
+}
+
+.site-hero {
+  display: grid;
+  justify-items: start;
+  gap: 24px;
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.site-hero-title {
+  max-width: 18ch;
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.site-hero-lead {
+  max-width: 44ch;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.site-hero-hours {
+  color: var(--muted);
+}
+
+.site-section {
+  display: grid;
+  gap: 16px;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.site-section-title {
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.site-section-lead {
+  max-width: 60ch;
+  color: var(--muted);
+}
+
+.service-grid,
+.job-gallery {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.service-name,
+.job-card-title {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.service-summary {
+  color: var(--muted);
+}
+
+.service-price {
+  margin-top: auto;
+  padding-top: 8px;
+  font-weight: 700;
+}
+
+.job-gallery {
+  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.job-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+/* Keyed by job: new content fades into the same card. */
+.job-card-content {
+  animation: fade-in var(--ease-quick) ease-out;
+}
+
+.job-card-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--surface-sunk);
+}
+
+.job-card-body {
+  display: grid;
+  gap: 4px;
+  padding: 16px;
+}
+
+.job-card-badge {
+  justify-self: start;
+  min-height: 1.5em;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: var(--accent-tint);
+  font-weight: 700;
+}
+
+.job-card-badge[data-empty="true"] {
+  visibility: hidden;
+}
+
+/* Every card the same height whatever its words: one-line title, three-line caption space. */
+.job-card-title,
+.job-card-meta {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.job-card-caption {
+  display: -webkit-box;
+  min-height: 4.5em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.job-card-meta,
+.job-gallery-empty {
+  color: var(--muted);
+}
+
+.enquiry-form {
+  display: grid;
+  gap: 16px;
+  max-width: 560px;
+}
+
+.enquiry-form .button {
+  justify-self: start;
+}
+
+.site-footer {
+  display: grid;
+  gap: 8px;
+  padding-top: 32px;
+  padding-bottom: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.site-footer-line {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+@media (min-width: 768px) {
+  .site-header,
+  .site-hero,
+  .site-section,
+  .site-footer {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.special-card {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 16px 24px;
+  background: var(--accent-tint);
+  border-radius: 12px;
+}
+
+.special-title {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.special-end {
+  font-weight: 700;
+}
+
+.hours-list {
+  display: grid;
+  gap: 4px;
+  max-width: 420px;
+  margin: 0;
+}
+
+.hours-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hours-day {
+  font-weight: 700;
+}
+
+.hours-time {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}

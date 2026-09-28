@@ -1,0 +1,9 @@
+{
+  // Fictional concept demo (static only). Deployed as its own Worker so it
+  // gets a *.workers.dev URL the marketing site can link to. The build goes
+  // to dist/; public/_headers ships inside it.
+  "$schema": "../../site/node_modules/wrangler/config-schema.json",
+  "name": "copperkloof-plumbing-demo",
+  "compatibility_date": "2026-09-28",
+  "assets": { "directory": "./dist" }
+}

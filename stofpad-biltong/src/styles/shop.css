@@ -1,0 +1,772 @@
+/*
+ * shop.css — the shop, in the static demo's look (style.css, 21 Sep
+ * 2026): the dark bands, the serif headlines, the glowing mark, the pill
+ * language switch, the card rails and the numbered steps. The shop is a
+ * size container: its layouts follow the width it has, so beside the
+ * admin on a wide screen it looks as it would on a screen that wide.
+ * Brought within the UX principles: spacing on the scale, 44px targets,
+ * copper kept for actions (small labels are muted), and at most three
+ * text sizes per block.
+ */
+.shop {
+  container: shop / inline-size;
+  position: relative;
+  background: var(--bg);
+}
+
+.shop-header,
+.hero,
+.specials,
+.catalogue,
+.order-section,
+.how,
+.hours-section,
+.shop-footer {
+  padding-inline: max(6%, calc((100% - 1320px) / 2));
+}
+
+/* Off the page to the left until it has focus: above the shop sits the demo's view switch, so "off the top" would show. */
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: -9999px;
+  z-index: 30;
+  padding: 12px;
+  background: var(--text);
+  color: var(--bg);
+}
+
+.skip-link:focus {
+  left: 12px;
+}
+
+/* The header keeps one layout per width and never rearranges on scroll: on a
+   wide shop the links stay inline; on a narrow one they sit behind the menu
+   button from the start. Scrolling only tightens the padding (is-scrolled). */
+.shop-header {
+  position: sticky;
+  top: var(--view-switch-height, 0px);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-block: 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  transition: padding-block var(--ease-quick) ease;
+}
+
+.shop-header.is-scrolled {
+  padding-block: 8px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-shrink: 0;
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font-size: var(--text-title);
+  cursor: pointer;
+}
+
+.shop-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+}
+
+.shop-brand-mark {
+  display: block;
+  width: 44px;
+  height: 44px;
+}
+
+.shop-brand-name {
+  font: 600 var(--text-title) / 1 var(--serif);
+  letter-spacing: 1px;
+}
+
+.shop-brand-name small {
+  display: block;
+  margin-top: 8px;
+  font: var(--text-fine) / 1 var(--font);
+  letter-spacing: 4px;
+}
+
+.shop-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+  font-size: var(--text-body);
+}
+
+.shop-nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.order-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--accent);
+  font-size: var(--text-body);
+  white-space: nowrap;
+}
+
+.order-icon {
+  display: none;
+}
+
+/* Wide enough for two digits, so the count never changes the header's width. */
+.order-count {
+  display: inline-block;
+  min-width: 32px;
+  padding: 0 8px;
+  border-radius: 24px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.language-switch {
+  display: flex;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+}
+
+.language-option {
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text);
+  font-size: var(--text-small);
+  cursor: pointer;
+}
+
+.language-option[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.shop-main {
+  animation: fade-in var(--ease-quick) ease-out;
+}
+
+.eyebrow {
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: var(--text-small);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.small-note,
+.section-note,
+.intro {
+  color: var(--muted);
+}
+
+.small-note {
+  margin: 16px 0 0;
+  font-size: var(--text-small);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 32px;
+  padding-block: 48px;
+  background: radial-gradient(ellipse at 80% 45%, #65362228, transparent 60%);
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-title,
+.section-title,
+.card-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.hero-title {
+  max-width: 600px;
+  margin-bottom: 24px;
+  font-size: clamp(42px, 5.7cqi, 78px);
+  letter-spacing: -2px;
+}
+
+.section-title {
+  margin-bottom: 24px;
+  font-size: clamp(30px, 3.4cqi, 46px);
+  letter-spacing: -1px;
+}
+
+.card-title {
+  margin-bottom: 12px;
+  font-size: var(--text-title);
+}
+
+.intro {
+  max-width: 450px;
+  margin-bottom: 24px;
+}
+
+.hero-logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 440px;
+  mix-blend-mode: screen;
+}
+
+.shop .button {
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: var(--text-body);
+  font-weight: 600;
+}
+
+.shop .button-primary {
+  color: var(--accent-ink);
+}
+
+@media (hover: hover) {
+  .shop .button-primary:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+}
+
+.catalogue,
+.how,
+.order-section,
+.hours-section {
+  padding-block: 64px;
+  border-top: 1px solid var(--line);
+}
+
+.catalogue {
+  background: var(--band);
+}
+
+.specials {
+  padding-block: 32px 48px;
+  border-top: 1px solid var(--line);
+  background: var(--band-warm);
+}
+
+.specials .section-title {
+  font-size: clamp(28px, 3cqi, 36px);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.section-note {
+  max-width: 340px;
+}
+
+.special-list,
+.products {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--panel);
+  cursor: grab;
+}
+
+.special-list {
+  gap: 16px;
+  padding-bottom: 12px;
+}
+
+.special-list.is-dragging,
+.products.is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+}
+
+.rail-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.rail-controls button {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #ae875d80;
+  border-radius: 50%;
+  background: var(--panel);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.rail-arrow {
+  display: block;
+  margin: auto;
+}
+
+@media (hover: hover) {
+  .rail-controls button:hover:not(:disabled) {
+    background: var(--accent);
+    color: var(--bg);
+  }
+}
+
+.rail-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.special-card {
+  display: flex;
+  flex: 0 0 34%;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #bd8b5b50;
+  border-radius: var(--radius);
+  background: linear-gradient(125deg, #302217, #181511);
+  scroll-snap-align: start;
+  user-select: none;
+  animation: fade-in var(--ease-quick) ease-out;
+}
+
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: auto;
+  padding-top: 12px;
+  color: var(--accent);
+  font-size: var(--text-body);
+}
+
+.catalogue-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 12px 0 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-filter {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid #ae875d70;
+  border-radius: 24px;
+  background: transparent;
+  color: var(--text);
+  font-size: var(--text-small);
+  cursor: pointer;
+}
+
+.category-filter[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.product-count,
+.swipe-hint {
+  color: var(--muted);
+  font-size: var(--text-small);
+  white-space: nowrap;
+}
+
+.products {
+  gap: 24px;
+  padding-bottom: 16px;
+}
+
+.product {
+  display: flex;
+  flex: 0 0 29%;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  scroll-snap-align: start;
+  user-select: none;
+  animation: fade-in var(--ease-quick) ease-out;
+}
+
+.product > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: #24201a;
+}
+
+.product.is-out > img {
+  opacity: 0.45;
+}
+
+.product-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
+}
+
+.product-body .eyebrow {
+  margin-bottom: 8px;
+}
+
+.product-description,
+.rate {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+/* Fixed-height cards: every text row keeps its space, so the rail's height never changes. */
+.product .card-title,
+.product-description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.product .card-title {
+  min-height: calc(2 * 1.15em);
+}
+
+.product-description {
+  min-height: calc(2 * 1.65em);
+}
+
+.rate {
+  min-height: 1.65em;
+}
+
+.rate[data-empty="true"],
+.product-options[data-empty="true"] {
+  visibility: hidden;
+}
+
+.product-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-label {
+  display: block;
+  margin: 8px 0 4px;
+  color: var(--muted);
+  font-size: var(--text-small);
+}
+
+.product-select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #ffffff35;
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.product-bottom {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.product-price {
+  margin-bottom: 12px;
+}
+
+.product-add {
+  width: 100%;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.step {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.step-number {
+  color: var(--muted);
+  font-size: var(--text-small);
+  letter-spacing: 1px;
+}
+
+.step .card-title {
+  margin-top: 16px;
+}
+
+.hours-list {
+  display: grid;
+  gap: 4px;
+  max-width: 420px;
+  margin: 24px 0 0;
+}
+
+.hours-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.hours-day {
+  font-weight: 600;
+}
+
+.hours-time {
+  margin: 0;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.shop-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: var(--text-fine);
+}
+
+.shop-footer .demo-notice {
+  display: block;
+  width: 100%;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 30;
+  max-width: calc(100% - 32px);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: 0 4px 24px #0005;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.toast:empty {
+  display: none;
+}
+
+@container shop (max-width: 1000px) {
+  .product {
+    flex-basis: 44%;
+  }
+
+  .shop-nav {
+    gap: 16px;
+  }
+}
+
+@container shop (max-width: 700px) {
+  .shop-header {
+    gap: 8px;
+    padding-block: 12px;
+  }
+
+  .shop-brand-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .language-switch {
+    margin-left: auto;
+  }
+
+  /* Cart icon and count only; the words stay for screen readers. */
+  .order-icon {
+    display: block;
+  }
+
+  .order-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* The menu: a sheet under the header, aligned with the page's own inline
+     padding, one 44px row per link. It fades in over the page, so nothing
+     under it moves. */
+  .shop-nav {
+    position: absolute;
+    inset: 100% 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: calc(100dvh - var(--view-switch-height, 0px) - var(--header-height, 72px));
+    margin: 0;
+    padding: 8px max(6%, calc((100% - 1320px) / 2)) 12px;
+    overflow-y: auto;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 20px #0003;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--ease-quick) ease-out,
+      visibility 0s linear var(--ease-quick);
+  }
+
+  .shop-header.menu-open .shop-nav {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity var(--ease-quick) ease-out,
+      visibility 0s linear 0s;
+  }
+
+  /* Centred rows; hover, focus and press tint the row in the shop's accent so
+     a thumb knows what it is about to hit. */
+  .shop-nav-link {
+    justify-content: center;
+    padding: 0 12px;
+    border-radius: 10px;
+    text-align: center;
+    transition:
+      background-color 150ms ease,
+      color 150ms ease;
+  }
+
+  .shop-nav-link:hover,
+  .shop-nav-link:focus-visible,
+  .shop-nav-link:active {
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    color: var(--accent);
+  }
+
+  .shop-nav-link:active {
+    background: color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-block: 32px;
+  }
+
+  .hero-title {
+    max-width: 430px;
+    font-size: clamp(40px, 10cqi, 58px);
+  }
+
+  .hero-logo {
+    max-height: 200px;
+  }
+
+  .catalogue,
+  .how,
+  .order-section,
+  .hours-section {
+    padding-block: 48px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .category-filter {
+    padding-inline: 12px;
+  }
+
+  .products,
+  .special-list {
+    gap: 16px;
+  }
+
+  .special-card,
+  .product {
+    flex-basis: 88%;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .shop-footer {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@container shop (max-width: 480px) {
+  .shop-brand {
+    gap: 4px;
+  }
+
+  .shop-brand-name {
+    display: none;
+  }
+
+  .language-switch {
+    padding: 0;
+  }
+}

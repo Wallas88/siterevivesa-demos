@@ -1,0 +1,43 @@
+/*
+ * tokens.css — Stofpad's dark roast palette and type, unchanged from the
+ * static demo (style.css :root), plus the names the shared admin, sign-in
+ * and controls styles read (--surface, --ink and the rest), mapped onto
+ * the same palette so the admin looks like the shop.
+ */
+:root {
+  color-scheme: dark;
+  --bg: #12110f;
+  --panel: #1e1b17;
+  --band: #181612;
+  --band-warm: #1d1914;
+  --text: #f1e9da;
+  --muted: #b7ac9b;
+  --accent: #d9965c;
+  --accent-hover: #edb17f;
+  --line: #ffffff26;
+  --radius: 12px;
+  --serif: Georgia, "Times New Roman", serif;
+  --font: system-ui, sans-serif;
+  /* Three text sizes per page section (Waldo, 28 Sep 2026: measured per section, one standard for every
+     demo): labels share the body size, so a section holds body, card titles and its headline. Only the
+     footer's fine print and the brand's small "BILTONG" are smaller, each alone in its section. */
+  --text-small: 15px;
+  --text-body: 15px;
+  --text-title: 24px;
+  --text-fine: 12px;
+
+  --surface: var(--panel);
+  --surface-sunk: #24201a;
+  --ink: var(--text);
+  --line-strong: #ffffff40;
+  --accent-ink: #1c1510;
+  --accent-tint: #3a2a1c;
+  --danger: #ff9b8a;
+  --focus: var(--accent);
+  --bezel: #000;
+  --shadow-1: 0 1px 2px #0006, 0 2px 8px #0004;
+  --shadow-2: 0 2px 4px #0008, 0 16px 48px #0009;
+  --button-border: 1px;
+  --ease-quick: 200ms;
+  --ease-duration: 250ms;
+}

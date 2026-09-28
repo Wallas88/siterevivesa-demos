@@ -1,0 +1,13 @@
+{
+  "name": "siterevivesa-demos",
+  "private": true,
+  "description": "The TypeScript demos and the core they share. The static demos in this repo are not workspaces and need no install.",
+  "workspaces": ["_core", "copperkloof-plumbing", "stofpad-biltong"],
+  "scripts": {
+    "check": "npm run check --workspaces",
+    "verify": "npm run verify --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=24 <25"
+  }
+}

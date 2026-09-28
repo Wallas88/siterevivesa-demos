@@ -1,0 +1,5 @@
+// _core uses the demos' shared rules (../biome.jsonc).
+{
+  "root": false,
+  "extends": "//"
+}

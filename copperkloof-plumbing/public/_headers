@@ -1,0 +1,15 @@
+# Served by Workers static assets from dist/ (see wrangler.jsonc); copied from
+# ../_shared/_headers.template. Widened for this demo only where it needs it:
+# img-src adds blob: for the photos a visitor adds, which live in their own
+# browser and are shown from blob: URLs. Tightened where it can be:
+# connect-src 'none', because this demo makes no network calls at all.
+# Permissions-Policy keeps camera=(): the photo button uses the phone's own
+# camera app through a file input, not the camera API.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  X-Robots-Tag: noindex, nofollow

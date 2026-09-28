@@ -1,0 +1,367 @@
+{
+  "capturedFrom": "stofpad-biltong/order.mjs and catalogue.mjs before the TypeScript conversion (28 Sep 2026)",
+  "baskets": [
+    {
+      "name": "weight items with options, no courier",
+      "courier": false,
+      "lines": [
+        {
+          "id": "beef",
+          "grams": 250,
+          "option": "Gekerf",
+          "quantity": 2
+        },
+        {
+          "id": "chilli",
+          "grams": 100,
+          "option": "",
+          "quantity": 1
+        },
+        {
+          "id": "droewors",
+          "grams": 500,
+          "option": "Dik",
+          "quantity": 3
+        }
+      ],
+      "totals": {
+        "cents": 87990,
+        "pending": false
+      },
+      "output": {
+        "en": {
+          "message": "Hi Stofpad Biltong (demo), I would like to order:\n\n2 × 250 g Beef Biltong — Gekerf — R209.50\n1 × 100 g Chilli Bites — R41.90\n3 × 500 g Droëwors — Dik — R628.50\n\nCollection / arrange directly with the shop\nEstimated total: R879.90\nPlease confirm availability, final packed weight, delivery and payment.\n\nSent from the Stofpad Biltong demo on siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hi%20Stofpad%20Biltong%20(demo)%2C%20I%20would%20like%20to%20order%3A%0A%0A2%20%C3%97%20250%20g%20Beef%20Biltong%20%E2%80%94%20Gekerf%20%E2%80%94%20R209.50%0A1%20%C3%97%20100%20g%20Chilli%20Bites%20%E2%80%94%20R41.90%0A3%20%C3%97%20500%20g%20Dro%C3%ABwors%20%E2%80%94%20Dik%20%E2%80%94%20R628.50%0A%0ACollection%20%2F%20arrange%20directly%20with%20the%20shop%0AEstimated%20total%3A%20R879.90%0APlease%20confirm%20availability%2C%20final%20packed%20weight%2C%20delivery%20and%20payment.%0A%0ASent%20from%20the%20Stofpad%20Biltong%20demo%20on%20siterevivesa.com."
+        },
+        "af": {
+          "message": "Hallo Stofpad Biltong (demo), ek wil graag bestel:\n\n2 × 250 g Beesbiltong — Gekerf — R209.50\n1 × 100 g Chilli Bites — R41.90\n3 × 500 g Droëwors — Dik — R628.50\n\nAfhaal / reël direk met die winkel\nGeskatte totaal: R879.90\nBevestig asseblief beskikbaarheid, finale gewig, aflewering en betaling.\n\nGestuur vanaf die Stofpad Biltong-demo op siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hallo%20Stofpad%20Biltong%20(demo)%2C%20ek%20wil%20graag%20bestel%3A%0A%0A2%20%C3%97%20250%20g%20Beesbiltong%20%E2%80%94%20Gekerf%20%E2%80%94%20R209.50%0A1%20%C3%97%20100%20g%20Chilli%20Bites%20%E2%80%94%20R41.90%0A3%20%C3%97%20500%20g%20Dro%C3%ABwors%20%E2%80%94%20Dik%20%E2%80%94%20R628.50%0A%0AAfhaal%20%2F%20re%C3%ABl%20direk%20met%20die%20winkel%0AGeskatte%20totaal%3A%20R879.90%0ABevestig%20asseblief%20beskikbaarheid%2C%20finale%20gewig%2C%20aflewering%20en%20betaling.%0A%0AGestuur%20vanaf%20die%20Stofpad%20Biltong-demo%20op%20siterevivesa.com."
+        }
+      }
+    },
+    {
+      "name": "pack items including a pending price, with courier",
+      "courier": true,
+      "lines": [
+        {
+          "id": "maize",
+          "grams": 5000,
+          "option": "",
+          "quantity": 1
+        },
+        {
+          "id": "maize",
+          "grams": 1000,
+          "option": "",
+          "quantity": 2
+        },
+        {
+          "id": "tails",
+          "grams": 1000,
+          "option": "",
+          "quantity": 1
+        }
+      ],
+      "totals": {
+        "cents": 39600,
+        "pending": true
+      },
+      "output": {
+        "en": {
+          "message": "Hi Stofpad Biltong (demo), I would like to order:\n\n1 × 5 kg Coarse White Maize Meal — R42.00\n2 × 1 kg Coarse White Maize Meal — Price to be confirmed\n1 × 1 kg Sheep Tails — R189.00\n\nCourier (subject to confirmation) — R165.00\nKnown subtotal: R396.00\nExcludes products with prices still to be confirmed.\nPlease confirm availability, final packed weight, delivery and payment.\n\nSent from the Stofpad Biltong demo on siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hi%20Stofpad%20Biltong%20(demo)%2C%20I%20would%20like%20to%20order%3A%0A%0A1%20%C3%97%205%20kg%20Coarse%20White%20Maize%20Meal%20%E2%80%94%20R42.00%0A2%20%C3%97%201%20kg%20Coarse%20White%20Maize%20Meal%20%E2%80%94%20Price%20to%20be%20confirmed%0A1%20%C3%97%201%20kg%20Sheep%20Tails%20%E2%80%94%20R189.00%0A%0ACourier%20(subject%20to%20confirmation)%20%E2%80%94%20R165.00%0AKnown%20subtotal%3A%20R396.00%0AExcludes%20products%20with%20prices%20still%20to%20be%20confirmed.%0APlease%20confirm%20availability%2C%20final%20packed%20weight%2C%20delivery%20and%20payment.%0A%0ASent%20from%20the%20Stofpad%20Biltong%20demo%20on%20siterevivesa.com."
+        },
+        "af": {
+          "message": "Hallo Stofpad Biltong (demo), ek wil graag bestel:\n\n1 × 5 kg Growwe Wit Meel — R42.00\n2 × 1 kg Growwe Wit Meel — Prys moet bevestig word\n1 × 1 kg Skaapstertjies — R189.00\n\nKoerier (onderhewig aan bevestiging) — R165.00\nBekende subtotaal: R396.00\nSluit produkte uit waarvan pryse nog bevestig moet word.\nBevestig asseblief beskikbaarheid, finale gewig, aflewering en betaling.\n\nGestuur vanaf die Stofpad Biltong-demo op siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hallo%20Stofpad%20Biltong%20(demo)%2C%20ek%20wil%20graag%20bestel%3A%0A%0A1%20%C3%97%205%20kg%20Growwe%20Wit%20Meel%20%E2%80%94%20R42.00%0A2%20%C3%97%201%20kg%20Growwe%20Wit%20Meel%20%E2%80%94%20Prys%20moet%20bevestig%20word%0A1%20%C3%97%201%20kg%20Skaapstertjies%20%E2%80%94%20R189.00%0A%0AKoerier%20(onderhewig%20aan%20bevestiging)%20%E2%80%94%20R165.00%0ABekende%20subtotaal%3A%20R396.00%0ASluit%20produkte%20uit%20waarvan%20pryse%20nog%20bevestig%20moet%20word.%0ABevestig%20asseblief%20beskikbaarheid%2C%20finale%20gewig%2C%20aflewering%20en%20betaling.%0A%0AGestuur%20vanaf%20die%20Stofpad%20Biltong-demo%20op%20siterevivesa.com."
+        }
+      }
+    },
+    {
+      "name": "mixed weight and pack, with courier",
+      "courier": true,
+      "lines": [
+        {
+          "id": "salt-pepper",
+          "grams": 1000,
+          "option": "",
+          "quantity": 1
+        },
+        {
+          "id": "maize",
+          "grams": 25000,
+          "option": "",
+          "quantity": 4
+        },
+        {
+          "id": "cabanossi",
+          "grams": 250,
+          "option": "",
+          "quantity": 99
+        }
+      ],
+      "totals": {
+        "cents": 1171025,
+        "pending": false
+      },
+      "output": {
+        "en": {
+          "message": "Hi Stofpad Biltong (demo), I would like to order:\n\n1 × 1 kg Salt & Pepper Biltong — R419.00\n4 × 25 kg Coarse White Maize Meal — R756.00\n99 × 250 g Cherry Cabanossi — R10370.25\n\nCourier (subject to confirmation) — R165.00\nEstimated total: R11710.25\nPlease confirm availability, final packed weight, delivery and payment.\n\nSent from the Stofpad Biltong demo on siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hi%20Stofpad%20Biltong%20(demo)%2C%20I%20would%20like%20to%20order%3A%0A%0A1%20%C3%97%201%20kg%20Salt%20%26%20Pepper%20Biltong%20%E2%80%94%20R419.00%0A4%20%C3%97%2025%20kg%20Coarse%20White%20Maize%20Meal%20%E2%80%94%20R756.00%0A99%20%C3%97%20250%20g%20Cherry%20Cabanossi%20%E2%80%94%20R10370.25%0A%0ACourier%20(subject%20to%20confirmation)%20%E2%80%94%20R165.00%0AEstimated%20total%3A%20R11710.25%0APlease%20confirm%20availability%2C%20final%20packed%20weight%2C%20delivery%20and%20payment.%0A%0ASent%20from%20the%20Stofpad%20Biltong%20demo%20on%20siterevivesa.com."
+        },
+        "af": {
+          "message": "Hallo Stofpad Biltong (demo), ek wil graag bestel:\n\n1 × 1 kg Sout-en-peperbiltong — R419.00\n4 × 25 kg Growwe Wit Meel — R756.00\n99 × 250 g Cherry Cabanossi — R10370.25\n\nKoerier (onderhewig aan bevestiging) — R165.00\nGeskatte totaal: R11710.25\nBevestig asseblief beskikbaarheid, finale gewig, aflewering en betaling.\n\nGestuur vanaf die Stofpad Biltong-demo op siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hallo%20Stofpad%20Biltong%20(demo)%2C%20ek%20wil%20graag%20bestel%3A%0A%0A1%20%C3%97%201%20kg%20Sout-en-peperbiltong%20%E2%80%94%20R419.00%0A4%20%C3%97%2025%20kg%20Growwe%20Wit%20Meel%20%E2%80%94%20R756.00%0A99%20%C3%97%20250%20g%20Cherry%20Cabanossi%20%E2%80%94%20R10370.25%0A%0AKoerier%20(onderhewig%20aan%20bevestiging)%20%E2%80%94%20R165.00%0AGeskatte%20totaal%3A%20R11710.25%0ABevestig%20asseblief%20beskikbaarheid%2C%20finale%20gewig%2C%20aflewering%20en%20betaling.%0A%0AGestuur%20vanaf%20die%20Stofpad%20Biltong-demo%20op%20siterevivesa.com."
+        }
+      }
+    },
+    {
+      "name": "empty order",
+      "courier": false,
+      "lines": [],
+      "totals": {
+        "cents": 0,
+        "pending": false
+      },
+      "output": {
+        "en": {
+          "message": "Hi Stofpad Biltong (demo), I would like to order:\n\n\nCollection / arrange directly with the shop\nEstimated total: R0.00\nPlease confirm availability, final packed weight, delivery and payment.\n\nSent from the Stofpad Biltong demo on siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hi%20Stofpad%20Biltong%20(demo)%2C%20I%20would%20like%20to%20order%3A%0A%0A%0ACollection%20%2F%20arrange%20directly%20with%20the%20shop%0AEstimated%20total%3A%20R0.00%0APlease%20confirm%20availability%2C%20final%20packed%20weight%2C%20delivery%20and%20payment.%0A%0ASent%20from%20the%20Stofpad%20Biltong%20demo%20on%20siterevivesa.com."
+        },
+        "af": {
+          "message": "Hallo Stofpad Biltong (demo), ek wil graag bestel:\n\n\nAfhaal / reël direk met die winkel\nGeskatte totaal: R0.00\nBevestig asseblief beskikbaarheid, finale gewig, aflewering en betaling.\n\nGestuur vanaf die Stofpad Biltong-demo op siterevivesa.com.",
+          "link": "https://wa.me/27681571817?text=Hallo%20Stofpad%20Biltong%20(demo)%2C%20ek%20wil%20graag%20bestel%3A%0A%0A%0AAfhaal%20%2F%20re%C3%ABl%20direk%20met%20die%20winkel%0AGeskatte%20totaal%3A%20R0.00%0ABevestig%20asseblief%20beskikbaarheid%2C%20finale%20gewig%2C%20aflewering%20en%20betaling.%0A%0AGestuur%20vanaf%20die%20Stofpad%20Biltong-demo%20op%20siterevivesa.com."
+        }
+      }
+    }
+  ],
+  "linePrices": [
+    {
+      "id": "beef",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "beef",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "beef",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "beef",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "salt-pepper",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "salt-pepper",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "salt-pepper",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "salt-pepper",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "chilli",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "chilli",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "chilli",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "chilli",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "bites",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "bites",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "bites",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "bites",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "blare",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "blare",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "blare",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "blare",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "wheels",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "wheels",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "wheels",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "wheels",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "bacon",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "bacon",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "bacon",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "bacon",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "droewors",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "droewors",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "droewors",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "droewors",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "cabanossi",
+      "grams": 100,
+      "cents": 4190
+    },
+    {
+      "id": "cabanossi",
+      "grams": 250,
+      "cents": 10475
+    },
+    {
+      "id": "cabanossi",
+      "grams": 500,
+      "cents": 20950
+    },
+    {
+      "id": "cabanossi",
+      "grams": 1000,
+      "cents": 41900
+    },
+    {
+      "id": "tails",
+      "grams": 100,
+      "cents": 1890
+    },
+    {
+      "id": "tails",
+      "grams": 250,
+      "cents": 4725
+    },
+    {
+      "id": "tails",
+      "grams": 500,
+      "cents": 9450
+    },
+    {
+      "id": "tails",
+      "grams": 1000,
+      "cents": 18900
+    },
+    {
+      "id": "maize",
+      "grams": 1000,
+      "cents": null
+    },
+    {
+      "id": "maize",
+      "grams": 5000,
+      "cents": 4200
+    },
+    {
+      "id": "maize",
+      "grams": 10000,
+      "cents": 8400
+    },
+    {
+      "id": "maize",
+      "grams": 12500,
+      "cents": 10300
+    },
+    {
+      "id": "maize",
+      "grams": 25000,
+      "cents": 18900
+    }
+  ],
+  "money": [[0, "R0.00"], [5, "R0.05"], [4190, "R41.90"], [16500, "R165.00"], [125050, "R1250.50"]],
+  "weight": [[100, "100 g"], [250, "250 g"], [1000, "1 kg"], [12500, "12.5 kg"]]
+}

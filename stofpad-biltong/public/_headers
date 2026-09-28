@@ -1,0 +1,14 @@
+# Served by Workers static assets from dist/ (see wrangler.jsonc); from
+# ../_shared/_headers.template. Widened only where this demo needs it:
+# img-src adds blob: for the product photos an owner adds, which live in
+# their own browser. Tightened where it can be: connect-src 'none', because
+# the demo makes no network calls. The WhatsApp order is a plain link the
+# visitor opens (a navigation, which this policy does not govern).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'
+  Strict-Transport-Security: max-age=31536000
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=()
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,24 @@
+{
+  // The TypeScript settings every TypeScript demo and _core share. Vite
+  // bundles; `tsc --noEmit` only checks. Node 24 runs scripts and tests
+  // straight from .ts (type stripping), so nothing may use non-erasable
+  // syntax such as enums or parameter properties.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node", "vite/client"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true
+  }
+}

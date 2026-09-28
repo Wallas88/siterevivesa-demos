@@ -1,0 +1,11 @@
+/* index.css — the demo's stylesheets in cascade order: its own tokens and
+ * base, the shared shell, controls and admin look from _core, then its own
+ * site and admin parts, and the shared motion rules last. */
+@import "./tokens.css";
+@import "./base.css";
+@import "../../../_core/styles/shell.css";
+@import "../../../_core/styles/controls.css";
+@import "./site.css";
+@import "../../../_core/styles/admin.css";
+@import "./admin.css";
+@import "../../../_core/styles/motion.css";

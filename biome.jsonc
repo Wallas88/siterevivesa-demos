@@ -1,0 +1,52 @@
+// biome.jsonc — the lint and format rules every TypeScript demo and _core
+// share (each has a small biome.jsonc that extends this one): two spaces,
+// single quotes, no semicolons, long lines allowed, JSX attributes in double
+// quotes. Lint, format, typecheck and tests each run from one npm script.
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "root": true,
+  "files": {
+    "includes": ["**", "!**/node_modules", "!**/dist", "!**/public", "!**/package-lock.json"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 240
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "semicolons": "asNeeded",
+      "trailingCommas": "all",
+      "arrowParentheses": "always"
+    }
+  },
+  "css": {
+    "formatter": { "enabled": true, "quoteStyle": "double" }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended",
+      "complexity": {
+        // The standard forbids new arrow functions: named functions only.
+        "useArrowFunction": "off"
+      },
+      "a11y": {
+        // role="group" with a label is valid ARIA; <fieldset> brings a browser layout quirk
+        // (min-width: min-content) that breaks the sideways-scrolling rails (as in the site's config).
+        "useSemanticElements": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      // The reduced-motion block must beat every component's own motion.
+      "includes": ["**/styles/motion.css"],
+      "linter": { "rules": { "complexity": { "noImportantStyles": "off" } } }
+    }
+  ],
+  "assist": { "enabled": false }
+}

@@ -1,0 +1,71 @@
+/*
+ * admin.css — Stofpad's own admin parts: the language switch in the admin
+ * bar, the "Add a product" form and the product rows with their prices.
+ * The shared admin look is in ../../../_core/styles/admin.css.
+ */
+.admin {
+  font-family: var(--font);
+}
+
+.admin-bar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+/* In the admin bar the language options use the admin's own text size, so the bar keeps three sizes. */
+.admin-bar-top .language-option {
+  font-size: 16px;
+}
+
+.product-form {
+  display: grid;
+  gap: 16px;
+}
+
+.product-form-pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.product-row {
+  padding: 12px 0;
+  animation: fade-in var(--ease-quick) ease-out;
+}
+
+.product-row-top {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+}
+
+.product-row-thumb {
+  display: block;
+  width: 48px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--surface-sunk);
+}
+
+.stock-toggle[aria-pressed="true"] {
+  border-style: dashed;
+  color: var(--muted);
+}
+
+.product-row-prices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 12px;
+  margin-top: 8px;
+}
+
+.price-hint {
+  min-height: 1.5em;
+  color: var(--danger);
+  font-size: var(--text-small);
+}

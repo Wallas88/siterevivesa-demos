@@ -4,7 +4,8 @@ Concept websites by [SiteReviveSA](https://siterevivesa.com), one folder per dem
 
 | Demo | What it shows | Live |
 |---|---|---|
-| `stofpad-biltong/` | A bilingual roadside biltong shop: catalogue, weights and packs, a quote-style order that opens in WhatsApp | [stofpad-biltong-demo](https://stofpad-biltong-demo.revivewebsitedev.workers.dev/) |
+| `stofpad-biltong/` | A bilingual roadside biltong shop with a phone admin: catalogue by weight and pack, an order that opens in WhatsApp, products, prices, stock, specials and hours edited on the phone (React, Vite build; rebuilt 28 Sep 2026) | [stofpad-biltong-demo](https://stofpad-biltong-demo.revivewebsitedev.workers.dev/) (the earlier static version until redeployed) |
+| `copperkloof-plumbing/` | A plumber's website with a phone admin: add a job photo on the phone and it shows on the site at once; nothing leaves the visitor's browser (React, Vite build) | not deployed |
 | `greenhearth-home/` | A home-services company: cleaning and garden pages, enquiry form | not deployed |
 | `petal-polish-nails/` | A nail and beauty studio, one page | not deployed |
 | `brackenridge-horse-trails/` | Horse trails, one page | not deployed |
@@ -20,10 +21,10 @@ Concept websites by [SiteReviveSA](https://siterevivesa.com), one folder per dem
 A demo is static, but its modules need a server rather than `file://`:
 
 ```bash
-cd stofpad-biltong && python3 -m http.server 4190 --bind 127.0.0.1
+cd fernway-garden-studio && python3 -m http.server 4190 --bind 127.0.0.1
 ```
 
-Then open http://127.0.0.1:4190/. Deploying one is `npx wrangler deploy` in its folder (a Cloudflare account, logged in with `wrangler login`).
+Then open http://127.0.0.1:4190/. The React demos (`copperkloof-plumbing/`, `stofpad-biltong/`) build with Vite instead: run `npm install` once in this folder (an npm workspace with the code they share in `_core/`), then `npm run dev` in the demo's folder. Deploying one is `npx wrangler deploy` in its folder (a Cloudflare account, logged in with `wrangler login`).
 
 ## Rights
 

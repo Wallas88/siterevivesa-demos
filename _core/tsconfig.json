@@ -1,0 +1,6 @@
+{
+  // _core on its own: everything the demos share, and its tests.
+  "extends": "../tsconfig.base.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
