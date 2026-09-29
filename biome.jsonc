@@ -12,6 +12,7 @@
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
+    // Wide on purpose: the 25-line limit counts lines as written, so the formatter must not wrap them (Waldo, 28 Sep 2026).
     "lineWidth": 240
   },
   "javascript": {

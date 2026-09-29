@@ -1,6 +1,6 @@
 # SiteReviveSA demos
 
-Concept websites by [SiteReviveSA](https://siterevivesa.com), one folder per demo, plain HTML and CSS with a little JavaScript where a demo needs it. Every business here is fictional: invented names, placeholder graphics, sample prices and hours. They exist to show what a rebuild can look like; nothing on them is a real offer.
+Concept websites by [SiteReviveSA](https://siterevivesa.com), one folder per demo, plain HTML and CSS with a little JavaScript where a demo needs it. Every business here is fictional: invented names, placeholder graphics or licensed stock photos (credited in each demo's `photo-credits.md`), sample prices and hours. They exist to show what a rebuild can look like; nothing on them is a real offer.
 
 | Demo | What it shows | Live |
 |---|---|---|
