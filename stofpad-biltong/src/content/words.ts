@@ -60,7 +60,7 @@ const SIGN_IN_EN: SignInWords = {
     },
     {
       here: 'Here Reset wipes your changes.',
-      real: "In your real site there are daily backups plus Cloudflare's restore window (7 days on the free plan), so a mistake can be undone.",
+      real: "In your real site, Cloudflare's restore window lets any change be undone up to 30 days back (on the paid plan your site runs on).",
     },
   ],
   errors: ERROR_MESSAGES.en,
@@ -94,7 +94,7 @@ const SIGN_IN_AF: SignInWords = {
     },
     {
       here: 'Hier vee Herstel jou veranderinge uit.',
-      real: "In jou regte webwerf is daar daaglikse rugsteun plus Cloudflare se herstelvenster (7 dae op die gratis plan), so 'n fout kan ongedaan gemaak word.",
+      real: 'In jou regte webwerf laat Cloudflare se herstelvenster enige verandering tot 30 dae terug ongedaan maak (op die betaalde plan waarop jou webwerf loop).',
     },
   ],
   errors: ERROR_MESSAGES.af,

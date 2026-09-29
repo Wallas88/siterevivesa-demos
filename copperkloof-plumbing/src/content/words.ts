@@ -44,7 +44,7 @@ export const SIGN_IN_WORDS: SignInWords = {
     },
     {
       here: 'Here Reset wipes your changes.',
-      real: "In your real site there are daily backups plus Cloudflare's restore window (7 days on the free plan), so a mistake can be undone.",
+      real: "In your real site, Cloudflare's restore window lets any change be undone up to 30 days back (on the paid plan your site runs on).",
     },
   ],
   errors: ERROR_MESSAGES,
