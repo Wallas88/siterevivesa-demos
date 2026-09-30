@@ -4,7 +4,7 @@ Concept websites by [SiteReviveSA](https://siterevivesa.com), one folder per dem
 
 | Demo | What it shows | Live |
 |---|---|---|
-| `stofpad-biltong/` | A bilingual roadside biltong shop with a phone admin: catalogue by weight and pack, an order that opens in WhatsApp, products, prices, stock, specials and hours edited on the phone (React, Vite build; rebuilt 28 Sep 2026) | [stofpad-biltong-demo](https://stofpad-biltong-demo.revivewebsitedev.workers.dev/) (the earlier static version until redeployed) |
+| `stofpad-biltong/` | **Being retired (30 Sep 2026): "Stofpad" is a real biltong business, so the shop demo moved to the panel as Stofkuil Biltong.** A bilingual roadside biltong shop with a phone admin: catalogue by weight and pack, an order that opens in WhatsApp, products, prices, stock, specials and hours edited on the phone (React, Vite build; rebuilt 28 Sep 2026) | [stofpad-biltong-demo](https://stofpad-biltong-demo.revivewebsitedev.workers.dev/) (the earlier static version until redeployed) |
 | `copperkloof-plumbing/` | A plumber's website with a phone admin: add a job photo on the phone and it shows on the site at once; nothing leaves the visitor's browser (React, Vite build) | not deployed |
 | `greenhearth-home/` | A home-services company: cleaning and garden pages, enquiry form | not deployed |
 | `petal-polish-nails/` | A nail and beauty studio, one page | not deployed |
